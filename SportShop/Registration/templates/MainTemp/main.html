@@ -1,0 +1,35 @@
+{% extends "MainTemp/index_for_main.html"%}
+
+{%block title%}Main{%endblock%}
+
+
+  {%block content_with_goods%}
+
+    <table id = "table_of_goods">
+      {%for good in goods%}
+          <tr>
+            {%for i in good%}
+              {% load staticfiles %}
+              <td class = 'img'><img src="/static/{{i.image}}"><br>
+              {{i.name}}<br>
+              {{i.price}}р.<br>
+                  <a href="goods/{{i.id}}" class="btn btn-primary">Купить</a>
+              </td>
+            {%endfor%}
+          </tr>
+
+
+        <!-- <tr>
+            {% load staticfiles %}
+            <td class = 'img'><img src="/static/{{good.image}}"></td>
+            <td>{{good.name}}</td>
+            <td>{{good.price}}р.</td>
+            <td>
+                <a href="goods/{{good.id}}" class="btn btn-primary">Купить</a>
+            </td class = 'buy'>
+        </tr> -->
+      {%endfor%}
+    </table>
+
+
+  {%endblock%}
