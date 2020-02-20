@@ -1,0 +1,73 @@
+{% extends "index.html"%} {%block head%} {% load static %}
+<link rel="stylesheet" href="{%static 'store.css'%}" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet"> 
+<title>Main</title>
+{%endblock%}{%block content%}
+<div class="main">
+  <div class="page_laout">
+    <div class="leftContent">
+      <div class="list_cat"><span class="llist_cat"><a style=" color: white" href="/store/">Категории</a></span></div>
+      <div class="categories">
+        <div class="cat_link" >
+          <a href="/store/games_with_balls">Игры с мячом</a>
+        </div>
+
+        <div class="cat_link"><a href="/store/bikes">Велосипеды</a></div>
+
+        <div class="cat_link">
+          <a href="/store/dumbbells_and_rods">Гантели и штанги</a>
+        </div>
+        <div class="cat_link">
+          <a href="/store/fighting_art">Боевые искусства</a>
+        </div>
+
+        <div class="cat_link">
+          <a href="/store/premium_attributes">Наградная атрибутика</a>
+        </div>
+
+        <div class="cat_link"><a href="/store/bildivards">Бильярд</a></div>
+
+        <div class="cat_link"><a href="/store/jumpers">Джамперы</a></div>
+
+        <div class="cat_link">
+          <a href="/store/desktop_games">Настольные игры</a>
+        </div>
+
+        <div class="cat_link"><a href="/store/baseball">Бейсбол</a></div>
+
+        <div class="cat_link"><a href="/store/espandery">Эспандары</a></div>
+
+        <div class="cat_link"><a href="/store/swimming">Плавание</a></div>
+
+        <div class="cat_link"><a href="/store/darts">Дартс</a></div>
+      </div>
+    </div>
+    <div class="rightContent">
+      <div class="content1">
+        {%for i in goods%}
+        <div class="good2">
+          <div class="good1">
+            {%load static%}
+            <div class="goood">
+            <img src="/static/{{i.image}}" />
+          </div>
+            <div class="good1_">
+              <div class="good_price">
+            <p style="font-size: 26px; color: var(--price);">{{i.price}}₽</p>  
+          </div>
+          <div class="good_name">       
+              <a href="goods/{{i.id}}"><p>{{i.name}}</p></a>
+            </div>
+              <div class='good_buy'> 
+              <a href="goods/{{i.id}}"><p>Купить</p></a>
+            </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

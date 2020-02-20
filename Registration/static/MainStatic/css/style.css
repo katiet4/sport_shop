@@ -1,0 +1,215 @@
+@media only screen and (max-width: 2000px){
+  header{
+  font-size:12px;
+  }
+  #block_menu{
+      padding-top:10px;
+      width:15%;
+      background-color:rgba(0,0,0,.9);
+      height:1000px;
+      margin-left:10%;
+      border:2px solid black;
+      border-radius: 0px 0px 0px 10px;
+    }
+    
+    #block_goods{
+      width:65%;
+      background-color:rgba(0,0,0,.9);            /* trash
+      /* height:1000px; */
+      margin-left:25%;
+      margin-top:-1000px;
+    }
+    #block_menu li{
+      margin-left: -20px;
+      list-style-type: none;
+      padding-top:10px;
+      font-size:12px;
+      width: 100%;
+    }
+    #block_menu a{
+      color:white;
+      text-decoration: none;
+    }
+    #block_menu a:hover{
+      color:white;
+      background-color:#191970;
+      padding:5px 10px 5px 10px;
+    }
+    #table_of_goods {
+      width: 100%;
+      color:white;
+    }
+    #table_of_goods td:hover{
+      background-color:rgba(25,25,92,.9);
+    }
+    #table_of_goods td{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      background-color:rgba(0, 0, 0, .9);
+        
+    }
+    #table_of_goods img{
+      border-radius: 200px;
+      width: 150px;
+      height: 150px;
+      padding:10px;
+      transition: transform .2s;
+    }
+    #table_of_goods a{
+      font-size: 20px;
+    }
+
+    #table_of_goods td:hover img{
+      transform: scale(1.1);
+    }
+}
+@media only screen and (max-width: 1280px){
+  header{
+  font-size:12px;
+  }
+  #block_menu{
+      padding-top:10px;
+      width:15%;
+      background-color:rgba(0,0,0,.9);
+      height:1000px;
+      margin-left:10%;
+      border:2px solid black;
+      border-radius: 0px 0px 0px 10px;
+    }
+    
+    #block_goods{
+      width:65%;
+      background-color:rgba(0,0,0,.9);            /* trash
+      /* height:1000px; */
+      margin-left:25%;
+      margin-top:-1000px;
+    }
+    #block_menu li{
+      margin-left: -20px;
+      list-style-type: none;
+      padding-top:10px;
+      font-size:12px;
+      width: 100%;
+    }
+    #block_menu a{
+      color:white;
+      text-decoration: none;
+    }
+    #block_menu a:hover{
+      color:white;
+      background-color:#191970;
+      padding:5px 10px 5px 10px;
+    }
+    #table_of_goods {
+      width: 100%;
+      color:white;
+    }
+    #table_of_goods td:hover{
+      background-color:rgba(25,25,92,.9);
+    }
+    #table_of_goods td{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      background-color:rgba(0, 0, 0, .9);
+        
+    }
+    #table_of_goods img{
+      border-radius: 200px;
+      width: 150px;
+      height: 150px;
+      padding:10px;
+      transition: transform .2s;
+    }
+    #table_of_goods a{
+      font-size: 20px;
+    }
+
+    #table_of_goods td:hover img{
+      transform: scale(1.1);
+    }
+}
+/*
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+
+
+*/
+
+@media only screen and (max-device-width: 480px){
+#block_menu{
+      width:27%;
+      background-color:rgba(0,0,0,.9);
+      height:1000;
+      margin-left:4%;
+      border:2px solid black;
+      border-radius: 0px 0px 0px 10px;
+    }
+    
+    #block_goods{
+      width:65%;
+      background-color:rgba(0,0,0,.9);           /* trash
+      /* height:1000px; */
+      margin-left:31%;
+      margin-top:-1000px;
+    }
+    #block_menu{
+      padding-top:10px;
+      /* border:2px solid blue;             /* trash */
+
+    }
+    #block_menu li{
+      margin-left: -20px;
+      list-style-type: none;
+      padding-top:10px;
+      font-size:18px;
+      width: 100%;
+    }
+    #block_menu a{
+      color:white;
+      text-decoration: none;
+    }
+    #block_menu a:hover{
+      color:white;
+      background-color:#191970;
+      padding:5px 10px 5px 10px;
+    }
+    #table_of_goods {
+      width: 100%;
+      color:white;
+    }
+    #table_of_goods td:hover{
+      background-color:rgba(25,25,92,.9);
+    }
+    #table_of_goods td{
+      font-size: 20px;
+      text-align: center;
+      padding-top: 10px;
+      background-color:rgba(0, 0, 0, .9);
+        
+    }
+    #table_of_goods img{
+      border-radius: 200px;
+      width: 150px;
+      height: 150px;
+      padding:10px;
+      text-align: center;
+      transition: transform .2s;
+    }
+    #table_of_goods a{
+      font-size: 20px;
+    }
+
+    #table_of_goods td:hover img{
+      transform: scale(1.1);
+    }
+}
+
+
+  

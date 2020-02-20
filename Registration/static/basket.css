@@ -1,0 +1,121 @@
+:root {
+  padding: 0;
+  margin: 0;
+}
+.conteiner {
+  display: flex;
+}
+.page_laout {
+  max-width: 1480px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.basket {
+  border: 1px solid #d8d8d8;
+  background: #d8d8d8;
+  padding: 7px 20px;
+  border-radius: 12px;
+  max-width: 270px;
+}
+.basket a {
+  color: black;
+}
+/* List Basket */
+.conteienr_list {
+  width: calc(100% - 350px);
+  margin: 20px 20px 50px 0;
+}
+.list_item {
+  display: flex;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  /* padding: 30px 20px 0; */
+}
+.list_item_in {
+  display: flex;
+  padding: 0 20px 20px;
+  width: 100%;
+}
+.item_block {
+  width: 65%;
+}
+.item_del button {
+  font-size: 14px;
+  line-height: 1.42857;
+  border: 0;
+  background: white;
+}
+.item_del {
+  margin-top: 20px;
+}
+.item_img img {
+  height: 60px;
+  width: 90px;
+  margin-right: 16px;
+}
+.item_col {
+  width: 15%;
+}
+.item_col1 {
+  display: inline-block;
+  max-width: 91px;
+  width: 91px;
+}
+.item_col_button {
+  width: calc(100% / 3);
+  box-sizing: border-box;
+  height: 36px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+}
+.item_col_button_min {
+  border-radius: 8px 0 0 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+  color: #ddd;
+}
+.item_col_button_plus {
+  border-radius: 8px 0 0 8px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 8px;
+  border-right: none;
+  color: #ddd;
+}
+.item_col_input {
+  width: calc(100% / 3);
+  box-sizing: border-box;
+  height: 36px;
+  border: none;
+}
+/* Block buy */
+.block_buy {
+  background: #fff;
+  height: 200px;
+  width: 160px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 350px;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.block_buy_button {
+  border: 2px solid orange;
+  border-radius: 15px;
+  background: orange;
+  padding: 15px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  margin-top: 90px;
+}

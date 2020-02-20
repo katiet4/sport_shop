@@ -1,0 +1,45 @@
+{% extends "index.html"%} {%block head%} {% load static %}
+<link rel="stylesheet" href="{%static 'main.css' %}" />
+<link rel="stylesheet" href="{%static 'basket.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic" rel="stylesheet" />
+<title>Main</title>
+{%endblock%} {%block content%}
+<div style="height: 528px;" class="page_laout">
+    <div>
+      <h2>Корзина</h2>
+    </div>
+    <div class="basket"><a>В корзине: 10 предметов</a></div> <!-- Общее кол-во товара -->
+    <div class="conteiner">
+      <div class="conteienr_list">
+        <div class="list_basket">
+          {%for i in goods%}
+          <div class="list_item">
+            <div class="list_item_in">
+              <div class="item_img"><img src="/static/images/balls/ball1.jpg" alt=""></div> <!-- Картинка товара-->
+              <div class="item_block">
+                <div class="item_name">{{i.name}}</div>
+                <div class="item_del"><button href='' style="color: grey;">Удалить</button></div> <!-- Кнопка для удаления товара -->
+              </div>
+              <div class="item_col">
+                <div class="item_col1">
+                  <button class="item_col_button item_col_button_min">-</button><input class='item_col_input' type="text"
+                    value='1'><button class='item_col_button item_col_button_plus'>+</button> <!-- Кол-во товара, value=1 -->
+                </div>
+              </div>
+              <div class="item_price"><span>{{i.price}}</span></div> <!-- Цена товара -->
+            </div>
+          </div>
+  {%endblock%}
+        </div>
+      </div>
+      <div class='block_buy'>
+        <div>
+          <p>Итого: 25 250 ₽</p> <!-- Конечная цена товаров-->
+        </div>
+        <div>
+          <button class="block_buy_button">Купить</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{%block head%}
+{% load static %}
+<title>Main</title>
+{%endblock%}
+
+{%block content%}
+<div class='content'>
+  <div class='content_inner'>
+    <div class='banner'>
+      <div class='img'></div>
+    </div>
+    <div class='content_main'>
+      {% for i in news %}
+
+      <div class='text'>
+        <h1>{{i.title}}</h1>
+        <p>{{i.text}}<img src='{{i.image}}' alt=''></p>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{%endblock%}

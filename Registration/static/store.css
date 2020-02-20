@@ -1,0 +1,91 @@
+/* Задаем flex */
+.main {
+  padding: 30px;
+  display: flex;
+}
+.main a {
+  color: black;
+}
+/* Задаем пространство */
+.page_laout {
+  display: flex;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+/* Левое меню */
+.leftContent {
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 260px;
+  height: 505px;
+  flex-shrink: 0;
+}
+.leftContent a{
+  color: black;
+}
+.list_cat {
+  display: flex;
+  padding: 10px;
+  background: grey;
+}
+.cat_link {
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+.cat_link:last-child{
+  border-bottom: 0;
+}
+.list_cat span {
+  margin: 0 auto;
+  color: white;
+}
+/* Товары */
+.rightContent {
+  padding-left: 20px;
+  display: flex;
+}
+.content1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.good1 {
+  margin: 10px;
+  margin-bottom: 26px;
+  /* display: block; */
+  box-sizing: border-box;
+  /* border: 1px solid grey; */
+}
+.good1_ {
+  /* margin: 0; */
+  text-align: center;
+}
+.good2 {
+  border: 1px solid grey;
+}
+.goood {
+  height: 278px;
+}
+
+.goood img{
+  transition: all .2s ease;    
+}
+.good_price {
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+.good_buy p {
+    font-family: 'Montserrat', sans-serif;
+  background: orange;
+  width: 150px;
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+  transition: all .5s ease;
+}
+.good_buy p:hover{
+    color: white;
+}
+.goood:hover img{
+    transition: all .5s ease;
+}

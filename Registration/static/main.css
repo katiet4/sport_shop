@@ -1,0 +1,281 @@
+:root {
+  --price: red;
+}
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", "Helvetica", "Arial", sans-serif;
+}
+div,
+a,
+p,
+form,
+button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+ul,
+li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+}
+.container {
+  position: relative;
+  max-width: 1330px;
+  margin: 0 auto;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.menu {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.menu div {
+  margin: 0 15px;
+  font-size: 19px;
+  padding: 3px;
+}
+.menu div a {
+  padding: 5px 0;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.menu div a:hover {
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  text-shadow: 0 0 10px white;
+}
+.login {
+  margin-right: 25px;
+  font-size: 15px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.login:hover {
+  font-size: 18px;
+  text-shadow: 0 0 10px white;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .login {
+    display: none;
+  }
+}
+@media only screen and (max-device-width: 380px) {
+  .bar img {
+    display: none;
+  }
+}
+
+/******************************************************/
+/*--------------********Content********-------------- */
+/******************************************************/
+
+.content {
+  margin: 0;
+  padding: 0;
+  width: 1340px;
+  margin: 0 auto;
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+}
+.img {
+  background: url(/static/images/banner.jpg) no-repeat;
+  height: 317px;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+}
+.content_main {
+  margin: 0;
+  top: 0;
+}
+.text {
+  padding-bottom: 20px;
+}
+.text p,
+.text h1 {
+  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-weight: 100;
+}
+.text h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-size: 4rem;
+}
+.text p {
+  margin: 5px;
+  font-size: 20px;
+}
+.text img {
+  float: right;
+  margin: 7px 0 7px 7px;
+}
+.text2 img {
+  float: left;
+}
+.text3 img {
+  float: right;
+}
+/*****************************************************/
+/*--------------********FOOTER********-------------- */
+/*****************************************************/
+
+.footer {
+  max-height: 90px;
+  background: rgba(0, 0, 0, 0.8);
+}
+.footer-block {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 87.4375em;
+}
+.footer-list {
+  display: flex;
+  padding: 23.2333px;
+  margin: 0 20px;
+}
+.footer-list li {
+  margin: 0 20px;
+}
+.footer-list li,
+.footer-list li a {
+  padding: 5px 0;
+}
+.copyright {
+  align-items: center;
+  margin-left: auto;
+}
+.copyright span {
+  color: white;
+}
+
+/* Log */
+.close {
+  position: relative;
+  z-index: 170000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  float: right;
+  background: none;
+  border: none;
+  font-size: 32px;
+}
+.login button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+.modal {
+  display: none;
+  position: fixed;
+  background: rgba(30, 30, 30, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 150000;
+}
+.loginBox {
+  display: none;
+  position: absolute;
+  z-index: 160000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.box {
+  position: relative;
+  background: #fafafa;
+  width: 90%;
+  background: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  margin: 4% auto 0 auto;
+  max-width: 500px;
+}
+.box p,
+.box a,
+.box h1,
+.box h2,
+.box h3 {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+.box h2 {
+  color: #333;
+  font-size: 26px;
+  font-weight: 300;
+  text-align: left;
+  line-height: 1.2;
+  margin: 0;
+  padding: 12px 15px 0 15px;
+}
+.box hr {
+  border-color: rgba(71, 71, 71, 0.08);
+  margin: 12px 15px 0 15px;
+}
+.formBox {
+  margin: 0 auto;
+  padding: 15px;
+}
+.formBox p {
+  font-weight: 500;
+  font-size: 18px;
+}
+.formBox input {
+  border-radius: 4px;
+  background-color: #fafafa;
+  border-color: rgba(71, 71, 71, 0.35);
+  box-shadow: inset rgb(71, 71, 71) 0px 1px 3px;
+  border: 1px;
+}
+.formBox > div p {
+  text-align: center;
+}
+.formBox > div > div {
+  margin: 0 auto;
+}
+.formBox > div > div:last-child {
+  margin-bottom: 0;
+}
+.formBox > div > div input {
+  width: 100%;
+  height: 33px;
+}
+.formBox > div p,
+.formBox > div div,
+.formBox > div input {
+  margin-bottom: 20px;
+}
+.logBoxBtn {
+  width: 100%;
+  height: 44px;
+  background: #3e4148;
+  border-radius: 2px;
+  color: white;
+}
+/* Reg */
+.registBox {
+  display: none;
+}

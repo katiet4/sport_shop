@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	{% load static %}
+	<link rel='stylesheet' href="{%static 'main.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic' rel='stylesheet'>
+	{%block head%}
+	{%endblock%}
+</head>
+
+<body>
+	<div class="modal">
+		</div>
+		<header class='header'>
+			<div class='container'>
+				<nav class='bar'>
+					<a href="/main/"><img src='/static/images/shop.png' alt=''></a>
+					<div class='menu'>
+						<div>
+							<a href='/main/'>Новости</a>
+						</div>
+						<div>
+							<a href='/store/'>Магазин</a>
+						</div>
+						<div>
+							<a href='/basket/'>Корзина</a>
+						</div>
+					</div>
+					<div class='login'>
+						{%if aunt%}
+						<a href='/login/logout'>Выйти</a>
+
+						<a href='/cabinet'>Личный кабинет</a>
+						{% else %}
+						<button ><p class="login"><a href = "/login">Войти<a></p></button>
+						<button ><p class="login"><a href = "/registration">Регистрация<a></p></button>
+						{%endif%}
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		{%block content%}
+		{%endblock%}
+
+
+<footer class='footer'>
+  <div class='nav-footer'>
+    <div class='footer-block'>
+    <img src="/static/images/shop.png" alt="">
+    <ul class='footer-list'>
+      <li><a href='/about/'>О нас</a></li>
+      <li><a href='/about/'>Что-то там</a></li>
+      <li><a href=''>Shop</a></li>
+    </ul>
+    <div class='copyright'>
+      <span>© 2020 <span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+      <span itemprop="name">Official Shop</span></span>
+            </span>
+    </div>
+    </div>
+  </div>
+  </footer> 
+</body>
+
+</html>

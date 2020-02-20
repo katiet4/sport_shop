@@ -1,0 +1,14 @@
+{%extends "index.html"%}
+{%block head%}
+{% load static %}
+<title>Cabinet</title>
+{%endblock%}
+{%block content%}
+
+
+{%if admin%}
+<a href='/administrator' style="color:black;">Панель администратора</a>
+{%endif%}
+<h1 strye = "color:black;">{{email}}</h1>
+
+{%endblock%}
