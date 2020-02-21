@@ -60,17 +60,17 @@
           <div class="good_price">
             <span class="">{{price}}₽</span>
           </div>
-          <p>В наличие: {{count}} шт.</p>
           <div class="good_caption">
             <h2>Описание</h2>
+            <p>В наличие: {{count}} шт.</p>
             <p>{{description}}</p>
           </div>
           <div class="good_buy_">
             {%if aunt%}
               <a href="/store/buy/{{id}}"><p>Купить</p></a>
             {% else %}
-              <a href="#"><p>Купить</p></a>
-              Нужно войти в аккаунт
+              <p>Войдите в аккаунт</p>
+              <a class='link' href="#"><p>Купить</p></a>
             {%endif%}
             
             

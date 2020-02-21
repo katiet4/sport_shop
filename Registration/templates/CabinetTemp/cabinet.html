@@ -1,14 +1,251 @@
 {%extends "index.html"%}
 {%block head%}
 {% load static %}
+<link rel="stylesheet" href="{%static 'cabinet.css'%}">
+<script src="{%static 'box.js'%}"></script>
 <title>Cabinet</title>
 {%endblock%}
 {%block content%}
 
+<div class="content">
+    <div class="contentBox">
+        <div class="controlPanel">
+            <div class='listPanel'><span>Мой аккаунт</span>
+                <hr>
+            </div>
 
-{%if admin%}
-<a href='/administrator' style="color:black;">Панель администратора</a>
-{%endif%}
-<h1 strye = "color:black;">{{email}}</h1>
-
-{%endblock%}
+            <div class="item">
+                <a><button style="cursor: pointer;background: none; border: none;" onclick='showItem("inf")'>Информация об аккаунте</button></a>
+                <a><button style="cursor: pointer;background: none; border: none;" onclick='showItem("ord")'>Информация о заказах</button></a>
+                {%if admin%}
+                <a><button style="cursor: pointer;background: none; border: none;" onclick='showItem("admin")'>Панель администратора</button></a>
+                {%endif %}
+                <a><button style="cursor: pointer;background: none; border: none;" onclick='showItem("edit")'>Настройки</button></a>
+            </div>
+        </div>
+        <div class="infoBlock inf">
+            <div class="info">
+                <div class='blockName'>
+                    <h2>Информация об аккаунте</h2>
+                    <hr>
+                </div>
+                <div class='mainBlock' style='display: flex;'>
+                    <div class='mainBlock-left'>
+                        <p>Ваше имя: {{name}}</p>
+                        <p>Ваш id: {{id}}</p>
+                    </div>
+                    <div>
+                        <p>Ваш e-mail: {{email}}</p>
+                        <p>Последний раз вы заходили: <p>{{last_join}}</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoBlock ord">
+            <div class="info">
+                <div class='blockName'>
+                    <h2>Информация о заказах</h2>
+                    <hr>
+                </div>
+                <div class='mainBlock'>
+                    <div class="order-block">
+                        <div class="order">
+                            <div class="orderBox">
+                                <p>Заказ №1</p>
+                                <div class='status'>
+                                    <p>Состояние: Подтверждение оплаты</p>
+                                    <p>Итого: 200.000 руб.</p>
+                                </div>
+                                <button class='details' onclick='detailBox()'>
+                                    <p>Подробнее</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bottom-order">
+                            <div class="b-b-order">
+                                <p>Список товаров:</p>
+                                <li>
+                                    <ul>
+                                        <p>Мяч</p>
+                                        <p>1шт.</p>
+                                        <p class='order-price'>100,000 Р</p>
+                                    </ul>
+                                    <ul>
+                                        <p>Велосипе</p>
+                                        <p>2шт.</p>
+                                        <p class='order-price'>500,000 Р</p>
+                                    </ul>
+                                    <ul>
+                                        <p>Гантеля</p>
+                                        <p>25шт.</p>
+                                        <p class='order-price'>500,000 Р</p>
+                                    </ul>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="infoBlock admin">
+            <div class="info">
+                <div class='blockName'>
+                    <h2>Панель Администратора</h2>
+                    <hr>
+                </div>
+                <div class='mainBlock'>
+                    <div class='adminMenu'>
+                        <button onclick='show("info")'> Информация</button>
+                        <button onclick='show("order")'>Заказы</button>
+                        <button onclick='show(control)'>Управление</button>
+                    </div>
+                    <div class='a-i-block adminBlock'>
+                        <div class='a-block'>
+                            <div>
+                                <h3>Статусы заказов</h3>
+                            </div>
+                            <p>Не оплачены: 215</p>
+                            <p>Ожидают подтверждение: 1 000</p>
+                            <p>Отправлены: 200</p>
+                            <p>Завершены: 5 000 000</p>
+                        </div>
+                    </div>
+                    <div class='a-o-block adminBlock'>
+                        <div class="a-block">
+                                <form action=""><input type="search"><button
+                                        type="submit">Поиск</button></form>
+                            <div>
+                                <div class="order">
+                                    <div class="orderBox">
+                                        <p>Заказ №1</p>
+                                        <form class='status'>
+                                            <p>Состояние: 
+                                                <select>
+                                                    <option>Отменено</option>
+                                                    <option>Подтверждение оплаты</option>
+                                                    <option>Оплачено</option>
+                                                    <option>Отправлено</option>
+                                                </select></p>
+                                            <p>Итого: 200.000 руб.</p>
+                                            </form>
+                                        <button class='details' onclick='detailBox()'>
+                                            <p>Подробнее</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="bottom-order">
+                                    <div class="b-b-order">
+                                        <p>Список товаров:</p>
+                                        <li>
+                                            <ul>
+                                                <p>Мяч</p>
+                                                <p>1шт.</p>
+                                                <p class='order-price'>100,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Велосипе</p>
+                                                <p>2шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Гантеля</p>
+                                                <p>25шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <div class="orderBox">
+                                        <p>Заказ №1</p>
+                                        <form class='status'>
+                                            <p>Состояние: 
+                                                <select>
+                                                    <option>Отменено</option>
+                                                    <option>Подтверждение оплаты</option>
+                                                    <option>Оплачено</option>
+                                                    <option>Отправлено</option>
+                                                </select></p>
+                                            <p>Итого: 200.000 руб.</p>
+                                        </form>
+                                        <button class='details' onclick='detailBox()'>
+                                            <p>Подробнее</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="bottom-order">
+                                    <div class="b-b-order">
+                                        <p>Список товаров:</p>
+                                        <li>
+                                            <ul>
+                                                <p>Мяч</p>
+                                                <p>1шт.</p>
+                                                <p class='order-price'>100,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Велосипе</p>
+                                                <p>2шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Гантеля</p>
+                                                <p>25шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="order">
+                                    <div class="orderBox">
+                                        <p>Заказ №1</p>
+                                        <form class='status'>
+                                            <p>Состояние: <select>
+                                                    <option>Отменено</option>
+                                                    <option>Подтверждение оплаты</option>
+                                                    <option>Оплачено</option>
+                                                    <option>Отправлено</option>
+                                                </select></p>
+                                            <p>Итого: 200.000 руб.</p>
+                                        </form>
+                                        <button class='details' onclick='detailBox()'>
+                                            <p>Подробнее</p>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="bottom-order">
+                                    <div class="b-b-order">
+                                        <p>Список товаров:</p>
+                                        <li>
+                                            <ul>
+                                                <p>Мяч</p>
+                                                <p>1шт.</p>
+                                                <p class='order-price'>100,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Велосипе</p>
+                                                <p>2шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                            <ul>
+                                                <p>Гантеля</p>
+                                                <p>25шт.</p>
+                                                <p class='order-price'>500,000 Р</p>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='a-c-block adminBlock'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endblock%}

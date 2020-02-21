@@ -1,9 +1,9 @@
 /* Задаем flex */
-.main {
+.content {
   padding: 30px;
   display: flex;
 }
-.main a {
+.content a {
   color: black;
 }
 /* Задаем пространство */

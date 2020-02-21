@@ -78,14 +78,13 @@
 .good_price{
   font-size: 1em;
 color: #333;
-/* font-weight: bold; */
 }
 .good_price{
   font-size: 26px;
   color: var(--price);
   text-shadow: 0 0 5px  var(--price);
 }
-.good_buy_ p {
+.link p {
   float: left;
   text-align: center;
   color: black;
@@ -99,10 +98,23 @@ padding: 10px;
 margin: 0 auto;
 transition: all .5s ease;
 }
-.good_buy_ p:hover{
+.link p:hover{
   color: white;
 }
 .good_caption{
   width: 818px;
  height: 190px;
+}
+.good_buy_ p {
+  font-family: 'Montserrat', sans-serif;
+background: orange;
+width: 150px;
+border: 1px solid orange;
+border-radius: 10px;
+padding: 10px;
+transition: all .5s ease;
+}
+.good_buy_ p:hover{
+  transition: all .5s ease;
+  color: black;
 }

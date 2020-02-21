@@ -2,11 +2,15 @@
   padding: 0;
   margin: 0;
 }
+body{
+  display: block;
+}
 .conteiner {
   display: flex;
 }
 .page_laout {
   max-width: 1480px;
+  min-height: 779px;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -52,6 +56,9 @@
 .item_del {
   margin-top: 20px;
 }
+.item_del > button > a{
+  color: grey
+}
 .item_img img {
   height: 60px;
   width: 90px;
@@ -59,6 +66,9 @@
 }
 .item_col {
   width: 15%;
+}
+.item_col input{
+  background: #ddd;
 }
 .item_col1 {
   display: inline-block;
@@ -72,6 +82,7 @@
   background: white;
   border: 2px solid #ddd;
   border-radius: 6px;
+  cursor: pointer;
 }
 .item_col_button_min {
   border-radius: 8px 0 0 8px;

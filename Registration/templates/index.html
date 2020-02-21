@@ -11,8 +11,6 @@
 </head>
 
 <body>
-	<div class="modal">
-		</div>
 		<header class='header'>
 			<div class='container'>
 				<nav class='bar'>
@@ -30,12 +28,11 @@
 					</div>
 					<div class='login'>
 						{%if aunt%}
-						<a href='/login/logout'>Выйти</a>
-
-						<a href='/cabinet'>Личный кабинет</a>
+						<button ><a class="login" href = "/login/logout">Выйти</a></button>
+						<button ><a class="login" href = "/cabinet">Личный кабинет</a></button>
 						{% else %}
-						<button ><p class="login"><a href = "/login">Войти<a></p></button>
-						<button ><p class="login"><a href = "/registration">Регистрация<a></p></button>
+						<button ><a class="login" href = "/login">Войти</a></button>
+						<button ><a class="login" href = "/registration">Регистрация</a></button>
 						{%endif%}
 					</div>
 				</nav>
@@ -44,7 +41,7 @@
 
 		{%block content%}
 		{%endblock%}
-
+	</div>
 
 <footer class='footer'>
   <div class='nav-footer'>

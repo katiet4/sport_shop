@@ -1,0 +1,48 @@
+/******************************************************/
+/*--------------********Content********-------------- */
+/******************************************************/
+
+.img {
+  background: url(/static/images/banner.jpg) no-repeat;
+  height: 317px;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+}
+.content{
+  width: 1340px;
+  margin: 0 auto;
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+}
+.content_main {
+  margin: 0;
+  top: 0;
+}
+.text {
+  padding-bottom: 20px;
+}
+.text p,
+.text h1 {
+  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-weight: 100;
+}
+.text h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-size: 4rem;
+}
+.text p {
+  margin: 5px;
+  font-size: 20px;
+}
+.text img {
+  float: right;
+  margin: 7px 0 7px 7px;
+}
+.text2 img {
+  float: left;
+}
+.text3 img {
+  float: right;
+}
