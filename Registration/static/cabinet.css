@@ -60,9 +60,7 @@
 }
 
 /* Info Order's */
-.inf,.ord,.admin{
-    display: none;
-}
+
 .order-block {
   width: 100%;
 }
@@ -120,10 +118,6 @@
 /* adminMenu */
 .adminMenu {
   display: flex;
-}
-.a-o-block,
-.a-c-block{
-  display: none;
 }
 .a-block {
   padding: 15px;
