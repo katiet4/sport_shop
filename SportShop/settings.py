@@ -25,10 +25,12 @@ SECRET_KEY = 'nnck3!gv$z1i!hpa)_e%7fk_x6s=8l_+w9v=r&(*j42xlkv$g@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.43.37","127.0.0.1"]
+ALLOWED_HOSTS = ["192.168.43.37","127.0.0.1", "192.168.0.13"]
 
 
 # Application definition
+
+
 
 INSTALLED_APPS = [
     'Cabinet',

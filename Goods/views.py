@@ -66,6 +66,9 @@ class views:
 
     def buy(self, request, ID):
         try:
+            if(Goods_of_user.objects.filter(userName = request.session["user"], goodId = ID)):
+                return HttpResponseRedirect("/store")
+
             goodOfUser = Goods_of_user(userName = request.session["user"],
                                         goodId = ID)
             goodOfUser.save()

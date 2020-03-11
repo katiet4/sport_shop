@@ -15,6 +15,7 @@ function summ() {
 	for(var i = 0; i < b.length;i++){
 		result += parseInt(b[i].innerText);
 	}
+	document.getElementById("hiddenResult").value = result;
 	document.getElementById("result").innerHTML = "Итого: " + result + "₽";
 }
 
@@ -29,5 +30,5 @@ minus = (i) => {
         c = --(document.getElementById(i).value);
 		b[i].innerHTML = parseInt(prices[i]) * c;
 		summ();
-    }       
+    }
 }

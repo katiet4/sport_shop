@@ -1,12 +1,16 @@
 :root {
   --price: red;
 }
+* {
+	margin: 0;
+	padding: 0;
+}
 body {
   background: #f6f6f6;
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", "Helvetica", "Arial", sans-serif;
   display: flex;
+  font-family: "PT Sans", "Helvetica", "Arial", sans-serif;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -24,6 +28,9 @@ button {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-size: 24px; */
+  /* text-align: center; */
+  /* color: pink; */
 }
 a {
   color: white;
@@ -42,9 +49,12 @@ li {
 .content {
   margin: 0;
   padding: 0;
-  flex: 1;
+  flex-grow: 1;
 }
+/* Header */
 .header {
+  display: table;
+  /* flex: 1 0 auto; */
   background: rgba(0, 0, 0, 0.8);
   width: 100%;
 }
@@ -57,12 +67,13 @@ li {
   display: flex;
   align-items: center;
   padding: 5px 0;
+  justify-content: space-between;
 }
 .menu {
   width: 50%;
   display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  /* justify-content: center; */
+  /* margin: 0 auto; */
 }
 .menu div {
   margin: 0 15px;
@@ -70,6 +81,7 @@ li {
   padding: 3px;
 }
 .menu div a {
+  /* font-size: 32px; */
   padding: 5px 0;
   color: #fff;
   transition: all 0.5s ease;
@@ -112,8 +124,13 @@ li {
 /*****************************************************/
 
 .footer {
+  width: 100%;
+  /* flex: 0 0 auto; */
   max-height: 90px;
   background: rgba(0, 0, 0, 0.8);
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* flex-grow: 1; */
 }
 .nav-footer{
   padding: 0 15px;

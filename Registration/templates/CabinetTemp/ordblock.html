@@ -1,0 +1,48 @@
+{%extends "CabinetTemp/cabinet.html"%}
+{%block content_in_cabinet%}
+
+
+        <div class="infoBlock ord">
+            <div class="info">
+                <div class='blockName'>
+                    <h2>Информация о заказах</h2>
+                    <hr>
+                </div>
+                <div class='mainBlock'>
+
+                  {%for i in orders%}
+                    <div class="order-block">
+                        <div class="order">
+                            <div class="orderBox">
+                                <p>Заказ №{{i.numberOfOrder}}</p>
+                                <div class='status'>
+                                    <p>Состояние: {{ i.status }}</p>
+                                    <p>Итого:{{ i.result }} руб.</p>
+                                </div>
+                                <button class='details' onclick='detailBox({{i.numberOfOrder}})'>
+                                    <p>Подробнее</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bottom-order" id='order-{{i.numberOfOrder}}'>
+                            <div class="b-b-order">
+                                <p>Список товаров:</p>
+                                <li>
+                                  {%for j in i.goods%}
+                                    <ul>
+                                        <p>{{j.good.name}}</p>
+                                        <p>{{j.count}}шт.</p>
+                                        <p class='order-price'>{{j.price}} Р</p>
+                                    </ul>
+                                    {%endfor%}
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+
+                </div>
+            </div>
+        </div>
+
+{%endblock%}

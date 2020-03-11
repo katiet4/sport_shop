@@ -63,17 +63,16 @@
           <div class="good_caption">
             <h2>Описание</h2>
             <p>В наличие: {{count}} шт.</p>
-            <p>{{description}}</p>
+            <div><p>{{description}}</p></div>
           </div>
           <div class="good_buy_">
-            {%if aunt%}
-              <a href="/store/buy/{{id}}"><p>Купить</p></a>
+            {%if count == 0%}
+            <a class='link notlogon' style="disabled: true" href="/store">Товара нет в наличии</a>
+            {%elif aunt %}
+              <a class='link' href="/store/buy/{{id}}">Купить</a>
             {% else %}
-              <p>Войдите в аккаунт</p>
-              <a class='link' href="#"><p>Купить</p></a>
+              <a class='link notlogon' href="/login">Войдите в аккаунт</a>
             {%endif%}
-            
-            
           </div>
         </div>
       </div>

@@ -1,0 +1,17 @@
+{%extends "CabinetTemp/adminblock.html"%}
+{%block adminblock%}
+
+        <div class='a-i-block adminBlock'>
+                        <div class='a-block'>
+                            <div>
+                                <h3>Статусы заказов</h3>
+                            </div>
+                            <p>Отменено: {{canceled}}</p>
+                            <p>Ожидают подтверждение: {{paymentConfirmation}}</p>
+                            <p>Оплачено: {{paid}}</p>
+                            <p>Отправлено: {{sent}}</p>
+                            <p>Завершено: {{completed}}</p>
+                        </div>
+                    </div>
+
+{%endblock%}

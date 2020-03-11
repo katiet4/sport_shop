@@ -1,0 +1,57 @@
+{%extends "CabinetTemp/adminblock.html"%}
+{%block adminblock%}
+{% load static %}
+<script src="{%static 'orders.js' %}"></script>
+<div class='a-o-block adminBlock'>
+    <div class="a-block">
+        <form action="" method="post">
+            <input name="search" type="search">
+            <button type="submit">Поиск</button>
+            {% csrf_token %}</form>
+
+        {%for i in orders%}
+        <form id='form{{i.numberOfOrder}}' action='' method = 'post'>
+          <input type="hidden" name="hiddenId" value="{{i.numberOfOrder}}">
+            <div>
+                <div class="order">
+                    <div class="orderBox">
+                        <p>Заказ №{{i.numberOfOrder}} </p>
+                        <div class='status'>
+                            <p>Состояние:
+                                <select name="stat" onchange='document.getElementById("form{{i.numberOfOrder}}").submit()'>
+                                    <option  selected>{{i.status}}</option>
+                                    <option>Отменено</option>
+                                    <option>Подтверждение оплаты</option>
+                                    <option>Оплачено</option>
+                                    <option>Отправлено</option>
+                                    <option>Завершено</option>
+                                </select></p>
+                            <p>Итого: {{ i.result }} руб.</p>
+                        </div>
+                        <div style = "font-size:14px;" class='details' onclick='detailBox({{i.numberOfOrder}})'>
+                            <p>Подробнее</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-order" id='order-{{i.numberOfOrder}}'>
+                    <div class="b-b-order">
+                        <p>Список товаров:</p>
+                        <li>
+                            {%for j in i.goods%}
+                            <ul>
+                                <p>{{j.good.name}}</p>
+                                <p>{{j.count}}шт.</p>
+                                <p class='order-price'>{{j.price}} Р</p>
+                            </ul>
+                            {%endfor%}
+                        </li>
+                    </div>
+                </div>
+            </div>
+            {% csrf_token %}
+        </form>
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}

@@ -1,7 +1,7 @@
 /* Задаем flex */
 .content {
   padding: 30px;
-  display: flex;
+  /* display: flex; */
 }
 .content a {
   color: black;
@@ -9,6 +9,7 @@
 /* Задаем пространство */
 .page_laout {
   display: flex;
+  /* display: flex; */
   max-width: 1480px;
   margin: 0 auto;
 }
@@ -16,9 +17,10 @@
 .leftContent {
   border: 1px solid grey;
   border-radius: 3px;
-  width: 260px;
-  height: 505px;
-  flex-shrink: 0;
+  min-width: 260px;
+  /* height: 505px; */
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 .leftContent a{
   color: black;
@@ -40,10 +42,6 @@
   color: white;
 }
 /* Товары */
-.rightContent {
-  padding-left: 20px;
-  display: flex;
-}
 .content1 {
   display: flex;
   flex-wrap: wrap;
@@ -51,16 +49,15 @@
 .good1 {
   margin: 10px;
   margin-bottom: 26px;
-  /* display: block; */
   box-sizing: border-box;
-  /* border: 1px solid grey; */
 }
 .good1_ {
-  /* margin: 0; */
   text-align: center;
 }
 .good2 {
   border: 1px solid grey;
+  background: white;
+  min-width: 298px;
 }
 .goood {
   height: 278px;
@@ -88,4 +85,12 @@
 }
 .goood:hover img{
     transition: all .5s ease;
+}
+@media only screen and (max-device-width: 768px) {
+  .page_laout{
+    display: block;
+  }
+  .content1{
+    display: block;
+  }
 }

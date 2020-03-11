@@ -42,6 +42,7 @@ def delete(request, ID):
 
 def buy_all(request):
 	if request.POST:
+		hiddenResult = int(request.POST['result'])
 		num = int(request.POST['b'])
 		orders = Orders.objects.all()
 		count = []
@@ -52,7 +53,7 @@ def buy_all(request):
 			numOfOrder = str(orders[len(orders)-1].id)
 		except Exception as e:
 			numOfOrder = "1"
-		
+
 		for i in range(num):
 			count.append(request.POST['count-'+str(i)])
 			good.append(request.POST['good-'+str(i)])
@@ -62,7 +63,7 @@ def buy_all(request):
 			if (aboutGoods[i].count < 0):
 				return HttpResponseRedirect("/basket")
 		for i in range(num):
-			order = Orders(userName = goodOfUser[i].userName, goodId = goodOfUser[i].goodId, count = count[i], numberOfOrder = numOfOrder)
+			order = Orders(result = hiddenResult, userName = goodOfUser[i].userName, goodId = goodOfUser[i].goodId, count = count[i], numberOfOrder = numOfOrder)
 			aboutGoods[i].save();
 			order.save()
 			goodOfUser[i].delete()

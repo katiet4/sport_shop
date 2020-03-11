@@ -1,5 +1,5 @@
 .content {
-  width: 53%;
+  width: 60%;
   margin: 0 auto;
 }
 .contentBox {
@@ -22,7 +22,7 @@
 /*********** Регистрация *************/
 /*************************************/
 .new_user {
-    width: 61.333%;
+    flex-grow: 1;
 }
 .button button {
   margin-top: 19.9167px;
@@ -56,7 +56,7 @@
 /*********** Авторизация *************/
 /*************************************/
 .logBox {
-  width: 33.33333%;
+  flex-grow: 2;
 }
 .logBox input {
   height: 36px;

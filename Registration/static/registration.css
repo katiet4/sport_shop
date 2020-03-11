@@ -1,13 +1,14 @@
 .content {
-  width: 55%;
-  margin: 0 auto;
+  display: flex;
+  /* width: 55%; */
+  /* margin: 0 auto; */
 }
 .contentBox {
-  margin-top: 40px;
-  width: 44.3%;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  /* margin-top: 40px; */
+  margin: 0 auto;
+  width: 28.3%;
+  align-items: center;
 }
 .contentBox hr {
   border-color: rgba(0, 0, 0, 0.5);
@@ -20,8 +21,13 @@
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .contentBoxIn {
+  display:;
+  background: #fff;
   line-height: 30px;
-  padding: 20px;
+  padding: 60px;
+  width: 132%;
+  border: 1px solid #ddd;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .btn button {
   margin-top: 19.9167px;

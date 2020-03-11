@@ -8,8 +8,8 @@
   border-left: 5px solid black;
   border-right: 5px solid black;
 }
-.content{
-  width: 1340px;
+.content {
+  max-width: 1340px;
   margin: 0 auto;
   border-left: 10px solid black;
   border-right: 10px solid black;
