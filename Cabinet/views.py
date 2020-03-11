@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from Goods.models import About_goods
@@ -87,17 +86,20 @@ def cabinet_admin_orders(request):
             id = request.POST["hiddenId"]
             stat = request.POST["stat"]
             orders = Orders.objects.filter(numberOfOrder = id)
+            print(2)
             for i in orders:
                 i.status = stat
                 i.save()
-
+            orders = Orders.objects.all().order_by('-id')
         except Exception as e:
-            print(e)
+            print(1)
             search = request.POST["search"]
+            print(search)
             orders = Orders.objects.filter(numberOfOrder = search).order_by('-id')
             if search == "":
                 orders = Orders.objects.all().order_by('-id')
-    orders = Orders.objects.all().order_by('-id')
+    else:
+        orders = Orders.objects.all().order_by('-id')
     alreadyOrders = []
     allNumOfOrders = set()
 
@@ -128,52 +130,3 @@ def cabinet_admin_orders(request):
 def cabinet_admin_management(request):
     dict = {"aunt":True}
     return checkAunt(request, "adminblock_management", dict, 1)
-=======
-from django.shortcuts import render
-from django.contrib.auth.models import User
-
-
-def rendering(request, what):
-    if request.user.is_authenticated:
-        ID = request.session['id']
-        usr = User.objects.get(id = ID)
-        return render(request, "CabinetTemp/"+what+".html", {"aunt":True,
-                                                                "admin" : usr.is_staff})
-    else:
-        return HttpResponseRedirect("/main")
-
-
-
-def cabinet(request):
-    return rendering(request, "cabinet")
-
-
-
-def cabinet_info(request):
-    if request.user.is_authenticated:
-        ID = request.session['id']
-        usr = User.objects.get(id = ID)
-        return render(request, "CabinetTemp/infoblock.html", {"aunt":True,
-                                                                "admin" : usr.is_staff,
-                                                                "name"  : usr.username,
-                                                                "id"    : usr.id,
-                                                                "last_join"    : usr.date_joined,
-                                                                "email" : usr.email})
-    else:
-        return HttpResponseRedirect("/main")
-
-def cabinet_orders(request):
-    return rendering(request, "ordblock")
-
-def cabinet_admin(request):
-    return rendering(request, "adminblock")
-
-def cabinet_admin_info(request):
-    return rendering(request, "adminblock_info")
-
-def cabinet_admin_orders(request):
-    return rendering(request, "adminblock_orders")
-
-def cabinet_admin_management(request):
-    return rendering(request, "adminblock_management")
->>>>>>> 262c75b71940de3e2525e01687e27ef3e4ee3244

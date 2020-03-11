@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {%extends "index.html"%}
 {%block head%}
 {% load static %}
@@ -24,40 +23,9 @@
                 <!-- <a><button style="cursor: pointer;background: none; border: none;">Настройки</button></a> -->
             </div>
         </div>
-    
+
         {% block content_in_cabinet %}
         {% endblock %}
     </div>
 </div>
-=======
-{%extends "index.html"%}
-{%block head%}
-{% load static %}
-<link rel="stylesheet" href="{%static 'cabinet.css'%}">
-<title>Cabinet</title>
-{%endblock%}
-{%block content%}
-
-<div class="content">
-    <div class="contentBox">
-        <div class="controlPanel">
-            <div class='listPanel'><span>Мой аккаунт</span>
-                <hr>
-            </div>
-
-            <div class="item">
-                <a href="/cabinet/info/"><button style="cursor: pointer;background: none; border: none;">Информация об аккаунте</button></a>
-                <a href="/cabinet/orders/"><button style="cursor: pointer;background: none; border: none;">Информация о заказах</button></a>
-                {%if admin%}
-                <a href="/cabinet/admin/"><button style="cursor: pointer;background: none; border: none;">Панель администратора</button></a>
-                {%endif %}
-                <!-- <a><button style="cursor: pointer;background: none; border: none;">Настройки</button></a> -->
-            </div>
-        </div>
-    
-        {% block content_in_cabinet %}
-        {% endblock %}
-    </div>
-</div>
->>>>>>> 262c75b71940de3e2525e01687e27ef3e4ee3244
     {%endblock%}

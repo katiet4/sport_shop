@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {%extends "CabinetTemp/cabinet.html"%}
 {%block content_in_cabinet%}
 
@@ -15,35 +14,10 @@
                     </div>
                     <div>
                         <p>Ваш e-mail: {{email}}</p>
-                        <p>Последний раз вы заходили: {last_join}}</p>
+                        <p>Последний раз вы заходили: {{last_join}}</p>
                     </div>
                 </div>
             </div>
         </div>
 
-=======
-{%extends "CabinetTemp/cabinet.html"%}
-{%block content_in_cabinet%}
-
-        <div class="infoBlock inf">
-            <div class="info">
-                <div class='blockName'>
-                    <h2>Информация об аккаунте</h2>
-                    <hr>
-                </div>
-                <div class='mainBlock' style='display: flex;'>
-                    <div class='mainBlock-left'>
-                        <p>Ваше имя: {{name}}</p>
-                        <p>Ваш id: {{id}}</p>
-                    </div>
-                    <div>
-                        <p>Ваш e-mail: {{email}}</p>
-                        <p>Последний раз вы заходили: <p>{{last_join}}</p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
->>>>>>> 262c75b71940de3e2525e01687e27ef3e4ee3244
 {%endblock%}
