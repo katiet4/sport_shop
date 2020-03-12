@@ -44,7 +44,8 @@
   width: 100%;
 }
 .item_block {
-  width: 65%;
+  flex: 2;
+  /* width: 65%; */
 }
 .item_del button {
   font-size: 14px;
@@ -64,6 +65,7 @@
   margin-right: 16px;
 }
 .item_col {
+  flex: 1;
   /* width: 15%; */
 }
 .item_col input {
