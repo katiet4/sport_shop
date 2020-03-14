@@ -10,3 +10,11 @@ class Orders(models.Model):
     status = models.TextField(default = "Отправлено")
     def __str__(self):
         return self.numberOfOrder
+
+class Comments(models.Model):
+    goodId =  models.IntegerField()
+    userId  =   models.IntegerField()
+    comment  =   models.TextField()
+    rating  =   models.IntegerField()
+    def __str__(self):
+        return self.goodId
