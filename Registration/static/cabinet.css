@@ -69,9 +69,9 @@
   border: 1px solid rgba(0, 0, 255, 0.6);
   box-shadow: 4px 3px 3px rgba(0, 0, 255, 0.6);
 }
-.bottom-order{
+.bottom-order {
   border: 1px solid rgba(255, 0, 0, 0.6);
-  box-shadow: 4px 3px 3px rgba(255, 0, 0, 0.6)
+  box-shadow: 4px 3px 3px rgba(255, 0, 0, 0.6);
 }
 .details {
   cursor: pointer;
@@ -173,8 +173,51 @@
   height: 29px;
   color: white;
 }
-.user_avatar img{
+.settingBlock {
+  width: 69.3%;
+  background: white;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.user_avatar img {
   height: 100px;
   border-radius: 100px;
   border: 1px solid black;
+}
+.mainBlock-left{
+  flex: 1;
+}
+.mainBlock-left form{
+  display: flex;
+  flex-direction: column;
+}
+.mainBlock-left img {
+  border-radius: 100px;
+  border: 1px solid black;
+  height: 210px;
+}
+.mainBlock-right{
+  flex:2;
+}
+.mainBlock-right form{
+  display: flex;
+  flex-direction: column;
+}
+.mainBlock-right form > input{
+  margin: 15px 0;
+}
+.change_password{
+  padding: 15px;
+}
+.send{
+  background-color: #db5e5c;
+  border: 1px solid #db5e5c;
+  border-radius: 10px;
+  color: white;
+  transition: all .5s ease;
+}
+.send:hover{
+  color: yellow;
+}
+.info hr{
+  margin:10px 0;
 }

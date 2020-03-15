@@ -1,20 +1,31 @@
 {%extends "CabinetTemp/cabinet.html"%}
 {%block content_in_cabinet%}
 
-        <div class="infoBlock inf">
+        <div class="settingBlock">
             <div class="info">
                 <div class='blockName'>
                     <h2>Настройки</h2>
-                    <hr>
                 </div>
+                <hr>
                 <div class='mainBlock' style='display: flex;'>
                     <div class='mainBlock-left'>
-                        <p>Ваше имя: {{name}}</p>
-                        <p>Ваш id: {{id}}</p>
+                        <form action="" method="post">
+                            <h3>Изменение аватарки:</h3>
+                            <img src="/static/images/avatar/no-ava.png" title="Аватар пользователя">
+                            <input type="file"accept=".jpg, .jpeg, .png">
+                            <input class='change_password send' type="submit" value="Загрузить">
+                            {% csrf_token %}
+                        </form>
                     </div>
-                    <div>
-                        <p>Ваш e-mail: {{email}}</p>
-                        <p>Последний раз вы заходили: {{last_join}}</p>
+                    <div class='mainBlock-right'>
+                        <form action="" method="post">
+                            <h3>Изменение пароля:   </h3>
+                            <input class="change_password" type="password" name="" id="" value="123456789">
+                            <input class="change_password" type="password" name="" id="" value="123456789">
+                            <input class="change_password" type="password" name="" id="" value="123456789">
+                            <input class='change_password send'type="submit" value="Изменить">
+                            {% csrf_token %}
+                        </form>
                     </div>
                 </div>
             </div>
