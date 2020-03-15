@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from Goods.models import About_goods, Goods_of_user
+from Cabinet.models import Comments
+from Login.models import Profile_of_user
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 
 class views:
@@ -76,16 +79,49 @@ class views:
             return HttpResponseRedirect("/store/"+ID)
         return HttpResponseRedirect("/store")
     def goods_by_id(self, request, ID):
-        good = About_goods.objects.get(id = ID)
         if request.user.is_authenticated:
             self.aunt = True
         else:
             self.aunt = False
+        try:
+            comments = Comments.objects.filter(goodId = ID).order_by("-id")
+            good = About_goods.objects.get(id = ID)
+        except Exception as e:
+            print(1)
+
+        ratingMiddle = 0
+        allInfoAboutComments = []
+        for i in comments:
+            infoAboutComments = {}
+            ratingMiddle+= int(i.rating)
+            try:
+                profile = Profile_of_user.objects.get(userId = i.userId)
+                username = User.objects.get(id = i.userId).username
+                infoAboutComments['ava'] = profile.userImg
+                infoAboutComments['status'] = profile.userStatus
+                infoAboutComments['name'] = username
+                infoAboutComments['rating'] = i.rating
+                infoAboutComments['comment'] = i.comment
+                allInfoAboutComments.append(infoAboutComments)
+            except Exception as e:
+                print(2)
+                print(e)
+
+        if request.POST:
+            ratings = request.POST["send_rating"]
+            commentSended = request.POST["comment"]
+            ratingMiddle += int(ratings)
+            good.rating = round(ratingMiddle/(len(comments)+1), 2)
+            good.save()
+            comm = Comments(goodId = ID, userId=request.session["id"], comment = commentSended, rating = ratings)
+            comm.save()
+            return HttpResponseRedirect("/store/goods/"+str(ID))
         return render(request, "BuyTemp/buy.html", {"price"      :good.price,
                                                     "name"       :good.name,
                                                     "description":good.description,
                                                     "image"      :good.image,
                                                     "count"      :good.count,
                                                     "id"         :ID,
+                                                    "comment"    :allInfoAboutComments,
                                                     "rating"     :good.rating,
                                                     "aunt"       :self.aunt})

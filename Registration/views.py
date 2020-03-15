@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from Login.models import Profile_of_user
 
 def registration(request):
     if request.user.is_authenticated:
@@ -25,10 +26,12 @@ def registration(request):
             user = auth.authenticate(username=username, password=password)
             if user is not None and user.is_active:
                 auth.login(request, user)
+                profile = Profile_of_user(userId = user.id)
+                profile.save()
                 request.session["id"] = user.id
                 request.session["user"] = user.username
                 return HttpResponseRedirect("/main")
-                
+
         return render(request, "RegTemp/registration.html")
 
 # Create your views here.s
