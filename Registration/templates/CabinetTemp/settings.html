@@ -1,0 +1,23 @@
+{%extends "CabinetTemp/cabinet.html"%}
+{%block content_in_cabinet%}
+
+        <div class="infoBlock inf">
+            <div class="info">
+                <div class='blockName'>
+                    <h2>Настройки</h2>
+                    <hr>
+                </div>
+                <div class='mainBlock' style='display: flex;'>
+                    <div class='mainBlock-left'>
+                        <p>Ваше имя: {{name}}</p>
+                        <p>Ваш id: {{id}}</p>
+                    </div>
+                    <div>
+                        <p>Ваш e-mail: {{email}}</p>
+                        <p>Последний раз вы заходили: {{last_join}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{%endblock%}
