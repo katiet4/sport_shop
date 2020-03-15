@@ -7,7 +7,7 @@ class About_goods(models.Model):
     description = models.TextField(default = "description empty")
     name = models.TextField()
     image = models.TextField()
-    rating = models.IntegerField(default=0)
+    rating = models.TextField(default="0.00")
     def __str__(self):
         return self.category
 class Goods_of_user(models.Model):
@@ -15,4 +15,3 @@ class Goods_of_user(models.Model):
     goodId  =   models.IntegerField()
     def __str__(self):
         return self.userName
-

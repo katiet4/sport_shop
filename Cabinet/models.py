@@ -15,6 +15,6 @@ class Comments(models.Model):
     goodId =  models.IntegerField()
     userId  =   models.IntegerField()
     comment  =   models.TextField()
-    rating  =   models.IntegerField()
+    rating  =   models.IntegerField(default = 0)
     def __str__(self):
         return str(self.goodId)

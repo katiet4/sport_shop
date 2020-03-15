@@ -87,13 +87,13 @@ class views:
             comments = Comments.objects.filter(goodId = ID).order_by("-id")
             good = About_goods.objects.get(id = ID)
         except Exception as e:
-            print(1)
+            pass
 
         ratingMiddle = 0
         allInfoAboutComments = []
         for i in comments:
             infoAboutComments = {}
-            ratingMiddle+= int(i.rating)
+            ratingMiddle+= float(i.rating)
             try:
                 profile = Profile_of_user.objects.get(userId = i.userId)
                 username = User.objects.get(id = i.userId).username
@@ -104,14 +104,13 @@ class views:
                 infoAboutComments['comment'] = i.comment
                 allInfoAboutComments.append(infoAboutComments)
             except Exception as e:
-                print(2)
-                print(e)
+                pass
 
         if request.POST:
             ratings = request.POST["send_rating"]
             commentSended = request.POST["comment"]
-            ratingMiddle += int(ratings)
-            good.rating = round(ratingMiddle/(len(comments)+1), 2)
+            ratingMiddle += float(ratings)
+            good.rating = str(round(ratingMiddle/(len(comments)+1), 2))
             good.save()
             comm = Comments(goodId = ID, userId=request.session["id"], comment = commentSended, rating = ratings)
             comm.save()
