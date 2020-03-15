@@ -1,6 +1,9 @@
 :root {
   --price: red;
 }
+html{
+  cursor: url('/static/cursor/normal.cur'), default;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -34,9 +37,11 @@ button {
   /* text-align: center; */
   /* color: pink; */
 }
+
 a {
   color: white;
   text-decoration: none;
+  /* cursor: url('/static/cursor/link.cur'), pointer; */
 }
 hr {
   border: 1px solid;
@@ -173,3 +178,14 @@ li {
   padding: 0;
   background: none;
 }
+a { cursor: url(/static/cursor/link.cur), progress !important; }
+html { cursor: url(/static/cursor/normal.cur), progress !important; }
+select { cursor: url(/static/normal.cur), progress !important; }
+label { cursor: url(/static/normal.cur), progress !important; }
+input[type=text] { cursor: url(/static/cursor/text.cur), progress !important; }
+input[type=password] { cursor: url(/static/cursor/text.cur), progress !important; }
+input[type=button] { cursor: url(/static/cursor/link.cur), progress !important; }
+input[type=submit] { cursor: url(/static/cursor/link.cur), progress !important; }
+input[type=file] { cursor: url(/static/cursor/link.cur), progress !important; }
+input[type=image] { cursor: url(/static/cursor/link.cur), progress !important; }
+div[id=PageScrollTop] { cursor: url(/static/cursor/link.cur), progress !important; }

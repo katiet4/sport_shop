@@ -87,4 +87,5 @@ class views:
                                                     "image"      :good.image,
                                                     "count"      :good.count,
                                                     "id"         :ID,
+                                                    "rating"     :good.rating,
                                                     "aunt"       :self.aunt})

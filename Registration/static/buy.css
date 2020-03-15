@@ -70,7 +70,7 @@
   font-size: 28px;
   font-weight: normal;
 }
-.good_block {
+.good_block, .reviows_block {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -90,10 +90,9 @@
   text-align: center;
   color: black;
   font-family: "Montserrat", sans-serif;
-  background: orange;
+  background: #DD5860;
   width: 150px;
-  /* height: 42px; */
-  border: 1px solid orange;
+  border: 1px solid #DD5860;
   border-radius: 10px;
   padding: 10px;
 }
@@ -106,4 +105,45 @@
 }
 .notlogon{
 width: 180px;
+}
+/******************************/
+/******************************/
+/******************************/
+/***********REVIOWS************/
+/******************************/
+/******************************/
+/******************************/
+.reviows_block{
+  background-color: white;
+  margin-top: 20px;
+}
+.reviows{
+  padding: 20px;
+}
+.reviows_block hr{
+  margin: 35px;
+}
+.comment_block{
+  display: inline-block;
+}
+.comment{
+  display: flex;
+}
+.comment_left{
+  margin: 33px 0px;
+}
+.comment_right{
+  margin-left: 40px;
+}
+.user_img img{
+  height: 100px;
+  border-radius: 100px;
+  border: 1px solid black;
+}
+.user_rating{
+  display: flex;
+  justify-content: flex-end;
+}
+.send_comment{
+  width: 100%;
 }

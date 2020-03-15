@@ -122,6 +122,7 @@
 /* adminMenu */
 .adminMenu {
   display: flex;
+  justify-content: space-evenly;
 }
 .a-block {
   padding: 15px;
@@ -171,4 +172,9 @@
   border: 1px solid #ddd;
   height: 29px;
   color: white;
+}
+.user_avatar img{
+  height: 100px;
+  border-radius: 100px;
+  border: 1px solid black;
 }
