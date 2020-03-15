@@ -18,12 +18,16 @@ def checkAunt(request, what, dict, admin = 0):
     return HttpResponseRedirect("/main")
 
 def cabinet(request):
-        dict = {"aunt":True}
-        return checkAunt(request, "cabinet", dict)
-
+    return HttpResponseRedirect("/cabinet/info")
+def cabinet_settings(request):
+    dict = {"aunt":True}
+    return checkAunt(request, "settings", dict)
 def cabinet_info(request):
-    ID = request.session['id']
-    usr = User.objects.get(id = ID)
+    try:
+        ID = request.session['id']
+        usr = User.objects.get(id = ID)
+    except Exception as e:
+        return HttpResponseRedirect("/main")
     dict = {"aunt":True,
             "name"  : usr.username,
             "id"    : usr.id,
@@ -33,7 +37,10 @@ def cabinet_info(request):
 
 
 def cabinet_orders(request):
-    orders = Orders.objects.filter(userName = request.session["user"]).order_by('-id')
+    try:
+        orders = Orders.objects.filter(userName = request.session["user"]).order_by('-id')
+    except Exception as e:
+        return HttpResponseRedirect("/main")
     alreadyOrders = []
     allNumOfOrders = set()
     for i in orders:
@@ -58,8 +65,7 @@ def cabinet_orders(request):
     return checkAunt(request, "ordblock", dict)
 
 def cabinet_admin(request):
-    dict = {"aunt":True}
-    return checkAunt(request, "adminblock", dict, 1)
+    return HttpResponseRedirect("/cabinet/admin/info")
 
 def cabinet_admin_info(request):
     orders = Orders.objects.all().order_by('-id')
