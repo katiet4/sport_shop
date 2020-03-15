@@ -136,7 +136,8 @@ width: 180px;
   margin-left: 40px;
 }
 .user_img img{
-  height: 100px;
+  width: 140px;
+  height: 140px;
   border-radius: 100px;
   border: 1px solid black;
 }

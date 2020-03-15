@@ -9,24 +9,74 @@
                 <hr>
                 <div class='mainBlock' style='display: flex;'>
                     <div class='mainBlock-left'>
-                        <form action="" method="post">
+                        <form action="/cabinet/settings/upload_file" method="post" enctype="multipart/form-data">
                             <h3>Изменение аватарки:</h3>
-                            <img src="/static/images/avatar/no-ava.png" title="Аватар пользователя">
-                            <input type="file"accept=".jpg, .jpeg, .png">
+                            <img src="{{ava}}" title="Аватар пользователя">
+                            <input type="file" accept=".jpg, .jpeg, .png" name="file">
                             <input class='change_password send' type="submit" value="Загрузить">
                             {% csrf_token %}
                         </form>
                     </div>
                     <div class='mainBlock-right'>
-                        <form action="" method="post">
-                            <h3>Изменение пароля:   </h3>
-                            <input class="change_password" type="password" name="" id="" value="123456789">
-                            <input class="change_password" type="password" name="" id="" value="123456789">
-                            <input class="change_password" type="password" name="" id="" value="123456789">
+                      <!--
+                      Скрипт проверяет пароли
+                       Уберешь куда надо -->
+
+
+
+                      <script type="text/javascript">
+                        function passwords ( )
+                        {
+                          var password_old = document.passwordsForm.old.value;
+                          var password_new = document.passwordsForm.new.value;
+                          var password_repeat_new = document.passwordsForm.repeat_new.value;
+
+                                if (password_old != "" && password_new != "" && password_repeat_new != ""){
+                                    if(password_old.length >= 8 && password_new.length >= 8 && password_repeat_new.length >= 8){
+                                       if(password_new == password_repeat_new){
+                                          return true;
+                                       }
+                                    }
+                                }
+                               return false;
+                        }
+                        function userLogin(){
+                          var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+                          var email_new = document.usernameForm.newemail.value;
+                          var pass = document.usernameForm.password.value;
+                                  if(pass.length >= 8){
+                                    if(email_new != ""){
+                                      if(reg.test(email_new)){
+                                        return true;
+                                      }
+                                    }
+                                    else{
+                                      return true;
+                                    }
+
+                                  }
+                               return false;
+                        }
+                      </script>
+                        <form name="passwordsForm" action="/cabinet/settings/reset_password" method="post" onsubmit="return passwords();">
+                            <h3>Изменение пароля:  </h3>
+                            <input class="change_password" type="password" name="old" id="" placeholder="Старый пароль">
+                            <input class="change_password" type="password" name="new" id="" placeholder="Новый пароль">
+                            <input class="change_password" type="password" name="repeat_new" id="" placeholder="Повторить новый пароль">
                             <input class='change_password send'type="submit" value="Изменить">
                             {% csrf_token %}
                         </form>
+                        <form name="usernameForm" action="/cabinet/settings/reset_username" method="post" onsubmit="return userLogin();">
+                            <h3>Изменение логина и email:  </h3>
+                            <input class="change_password" type="password" name="password" id="" placeholder="Пароль">
+                            <input class="change_password" type="text" name="newusername" id="" placeholder="Новый логин">
+                            <input class="change_password" type="text" name="newemail" id="" placeholder="Новый email">
+                            <input class='change_password send'type="submit" value="Изменить">
+                            {% csrf_token %}
+                        </form>
+
                     </div>
+
                 </div>
             </div>
         </div>
