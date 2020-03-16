@@ -1,5 +1,4 @@
 {% extends "index.html"%} {%block head%} {% load static %}
-<link rel="stylesheet" href="{%static 'main.css' %}" />
 <link rel="stylesheet" href="{%static 'buy.css' %}" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic"
@@ -151,8 +150,13 @@
              <div class='user_name'>{{i.name}}</div>
 
              <!-- статус -->
-        <div class='user_status'>{{i.status}}</div>
-
+        {% if i.status == 'Administrator' %}
+        <div class='user_status_admin'>{{i.status}}</div>
+        {% elif i.status == 'New Member' %}
+        <div class='user_status_member'>Новый пользователь</div>
+        {% elif i.status == 'VIP' %}
+        <div class='user_status_vip'>{{i.status}}</div>
+        {% endif %}
         </div>
         <div>
           {{i.rating}}

@@ -4,7 +4,10 @@ function detailBox(numberOrder) {
   // alert(1);
   if(order.style.display=="block"){
     order.style.display = 'none';
-  } else {
+  } if(numberOrder == 'jfashfjksajdfoiash'){
+
+  }
+else {
     order.style.display = 'block';
   }
 };

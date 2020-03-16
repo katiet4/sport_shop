@@ -94,16 +94,15 @@ def cabinet_admin_orders(request):
         try:
             id = request.POST["hiddenId"]
             stat = request.POST["stat"]
-            orders = Orders.objects.filter(numberOfOrder = id)
-            print(2)
+            userName = request.POST["userName"]
+            orders = Orders.objects.filter(numberOfOrder = id) 
             for i in orders:
                 i.status = stat
+                orders['userName'] = i.userName
                 i.save()
             orders = Orders.objects.all().order_by('-id')
         except Exception as e:
-            print(1)
             search = request.POST["search"]
-            print(search)
             orders = Orders.objects.filter(numberOfOrder = search).order_by('-id')
             if search == "":
                 orders = Orders.objects.all().order_by('-id')

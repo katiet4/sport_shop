@@ -178,6 +178,12 @@ li {
   padding: 0;
   background: none;
 }
+
+/*  */
+/*  */
+/* Cursor's */
+/*  */
+/*  */
 a { cursor: url(/static/cursor/link.cur), progress !important; }
 html { cursor: url(/static/cursor/normal.cur), progress !important; }
 select { cursor: url(/static/normal.cur), progress !important; }
@@ -189,3 +195,26 @@ input[type=submit] { cursor: url(/static/cursor/link.cur), progress !important; 
 input[type=file] { cursor: url(/static/cursor/link.cur), progress !important; }
 input[type=image] { cursor: url(/static/cursor/link.cur), progress !important; }
 div[id=PageScrollTop] { cursor: url(/static/cursor/link.cur), progress !important; }
+
+/*  */
+/*  */
+/*  */
+/* Status */
+/*  */
+/*  */
+/*  */
+.user_status_admin{
+  text-shadow: red 1px 1px 10px;
+  color: red;
+}
+.user_status_member{
+  text-shadow: blue 1px 1px 10px;
+  color: blue;
+}
+.user_status_vip{
+  text-shadow: orange 1px 1px 10px;
+  color: orange;
+}
+.user_name, .user_status_admin, .user_status_vip, .user_status_member{
+  text-align: center;
+}

@@ -1,7 +1,12 @@
 {%extends "CabinetTemp/adminblock.html"%}
+{%load static%}
+<script type="text/javascript" src="{% static 'bbb.js' %}">
+</script>
 {%block adminblock%}
 
         <div class='a-c-block adminBlock'>
+                <form action=""></form>
+                <button style="background-color: white; border: none" type="submit" onchange="bbb()">Сбросить ссылки восстановления</button>
         </div>
 
 {%endblock%}

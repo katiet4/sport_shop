@@ -58,20 +58,21 @@
 .logBox {
   flex-grow: 2;
 }
-.logBox input {
+.form-control{
   height: 36px;
   background: white;
   border: 1px solid #ddd;
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
+  width: 94%;
 }
 .logBox p,
 input {
   line-height: 1.9;
   margin-top: 14px;
 }
-.logBox input {
-  width: 94%;
-}
 .btn1:after {
   content: ">";
+}
+.btn3:after {
+  content: "?";
 }
