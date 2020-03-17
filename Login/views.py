@@ -39,7 +39,8 @@ def recover_password(request):
             email = request.POST["email"]
             if  (User.objects.filter(email = email).exists()):
                 user = User.objects.get(email = email)
-                if(URL_for_reset.objects.filter(userId = user.id).exists() == False):
+                print()
+                if(URL_for_reset.objects.filter(userId = user.id).exists()):
                     return HttpResponseRedirect("/login")
                 url = generateSURL(URL_for_reset)
                 addUrlToBD = URL_for_reset(codeURL = url, userId = user.id)
@@ -48,9 +49,9 @@ def recover_password(request):
                     HOSTNAME = socket.gethostip()
                     print(HOSTNAME)
                 except:
-                    HOSTNAME = '127.0.0.0:8000'
-                HOSTNAME = '127.0.0.0:8000'
-                m = ("To restore your password, follow this link: " +
+                    HOSTNAME = '127.0.0.1:8000'
+                HOSTNAME = '127.0.0.1:8000'
+                m = ("To restore your password, follow this link: http://" +
                         HOSTNAME + "/login/recover_password/" + url)
                 try:
                     smtpObj = smtplib.SMTP('smtp.mail.ru', 587) # connect tot server
