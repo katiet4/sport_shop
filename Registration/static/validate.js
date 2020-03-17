@@ -98,3 +98,14 @@ function password_repeat() {
   }
   return false;
 }
+function email_check(){
+
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var email = document.recoverForm.email.value;
+      if (email != "") {
+        if (reg.test(email)) {
+          return true;
+        }
+      }
+    return false;
+}

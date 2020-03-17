@@ -5,6 +5,9 @@
 {%block head%}
 {% load static %}
 <link rel='stylesheet' href="{%static 'login.css' %}">
+<script type="text/javascript" src="{%static 'validate.js' %}">
+
+</script>
 {%endblock%}
 
 
@@ -26,7 +29,7 @@
         <input type="text" name="username" id="username" class="form-control">
         <p>Пароль</p>
         <input type="password" name="password" id="password" class="form-control">
-        <a href='#'>Забыли пароль?</a>
+        <!-- <a href='#'>Забыли пароль?</a> -->
         <div class="button">
           <button class='btn1' type="submit" name="send">Войти</button>
         </div>
@@ -41,15 +44,17 @@
         <div class="button">
           <button class="btn2"><a href="/registration/">Зарегистрироваться</a></button>
         </div>
-        <form action="" method="POST" style="margin-top: 20px;">
+        <form name = "recoverForm" onsubmit="return email_check();"
+              action="/login/recover_password/" method="POST" style="margin-top: 20px;">
         <h2>Забыли пароль?</h2>
       <hr>
       <div>
         <p>Введите ваш E-mail для восстановления пароля!</p>
-        <input class="form-control" type="text" name="" id="">
+        <input class="form-control" type="text" name="email" id="">
         <div class="button">
-          <button class="btn3"><a href="/registration/" onchange="detailBox(jfashfjksajdfoiash)">Восстановить пароль</a></button>
+          <button  class="btn3">Восстановить пароль</button >
         </div>
+        {% csrf_token %}
       </form>
       </div>
     </div>

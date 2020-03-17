@@ -6,3 +6,8 @@ class Profile_of_user(models.Model):
     userStatus = models.TextField(default = "New Member")
     def __str__(self):
         return str(self.userId)
+class URL_for_reset(models.Model):
+    codeURL  =   models.TextField()
+    userId =   models.IntegerField(default = 1)
+    def __str__(self):
+        return self.codeURL

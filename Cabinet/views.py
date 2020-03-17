@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from Goods.models import About_goods
-from Login.models import Profile_of_user
+from Login.models import Profile_of_user, URL_for_reset
 from Cabinet.models import Orders
 from django.contrib import auth
 from django.contrib.auth.hashers import check_password
@@ -94,8 +94,13 @@ def cabinet_admin_orders(request):
         try:
             id = request.POST["hiddenId"]
             stat = request.POST["stat"]
+            if(stat == "Удалить"):
+                orders = Orders.objects.filter(numberOfOrder = id)
+                for i in orders:
+                    i.delete()
+                return HttpResponseRedirect("/cabinet/admin/orders")
             userName = request.POST["userName"]
-            orders = Orders.objects.filter(numberOfOrder = id) 
+            orders = Orders.objects.filter(numberOfOrder = id)
             for i in orders:
                 i.status = stat
                 orders['userName'] = i.userName
@@ -136,6 +141,10 @@ def cabinet_admin_orders(request):
     return checkAunt(request, "adminblock_orders", dict, 1)
 
 def cabinet_admin_management(request):
+    if request.POST:
+        urls = URL_for_reset.objects.all()
+        for i in urls:
+            i.delete()
     dict = {"aunt":True}
     return checkAunt(request, "adminblock_management", dict, 1)
 
