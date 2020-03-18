@@ -94,16 +94,14 @@ def cabinet_admin_orders(request):
         try:
             id = request.POST["hiddenId"]
             stat = request.POST["stat"]
+            orders = Orders.objects.filter(numberOfOrder = id)
             if(stat == "Удалить"):
                 orders = Orders.objects.filter(numberOfOrder = id)
                 for i in orders:
                     i.delete()
                 return HttpResponseRedirect("/cabinet/admin/orders")
-            userName = request.POST["userName"]
-            orders = Orders.objects.filter(numberOfOrder = id)
             for i in orders:
-                i.status = stat
-                orders['userName'] = i.userName
+                i.status = stat   
                 i.save()
             orders = Orders.objects.all().order_by('-id')
         except Exception as e:
