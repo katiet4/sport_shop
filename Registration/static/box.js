@@ -4,16 +4,14 @@ function detailBox(numberOrder) {
   // alert(1);
   if(order.style.display=="block"){
     order.style.display = 'none';
-  } if(numberOrder == 'jfashfjksajdfoiash'){
-
-  }
+  } 
 else {
     order.style.display = 'block';
   }
 };
 showItem = (item) =>{
     inf = document.getElementsByClassName('inf');
-    ord = document.getElementsByClassName('ord'); 
+    ord = document.getElementsByClassName('ord');
     admin = document.getElementsByClassName('admin');
     if(item == 'inf'){
         inf[0].style.display='block'
@@ -29,5 +27,3 @@ showItem = (item) =>{
         admin[0].style.display='block'
     }
 }
-
-
