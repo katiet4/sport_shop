@@ -183,6 +183,11 @@
   border-radius: 100px;
   border: 1px solid black;
 }
+form[name='avaForm'] img {
+  height: 100px;
+  border-radius: 100px;
+  border: 1px solid black;
+}
 .mainBlock-left{
   flex: 1;
 }
@@ -221,4 +226,26 @@
 }
 .info hr{
   margin:10px 0;
+}
+/* Setting */
+.mainBlock{
+  display: grid;
+  grid-template-areas: 
+  ". ava ."
+  "pass . username"
+}
+.box{
+  grid-area: box;
+}
+form[name="avaForm"]{
+  grid-area: ava;
+}
+form[name="passwordsForm"]{
+  grid-area: pass;
+}
+form[name="usernameForm"]{
+  grid-area: username;
+}
+.send{
+  margin:15px 0;
 }

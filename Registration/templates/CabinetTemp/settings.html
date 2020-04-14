@@ -9,9 +9,8 @@
                     <h2>Настройки</h2>
                 </div>
                 <hr>
-                <div class='mainBlock' style='display: flex;'>
-                    <div class='mainBlock-left'>
-                        <form action="/cabinet/settings/upload_file" method="post" enctype="multipart/form-data">
+                <div class='mainBlock'>
+                        <form name="avaForm" action="/cabinet/settings/upload_file" method="post" enctype="multipart/form-data">
                             <h3>Изменение аватарки:</h3>
                             <img src="{{ava}}" title="Аватар пользователя">
                             <input type="file" accept=".jpg, .jpeg, .png" name="file">
@@ -34,11 +33,10 @@
                             <input class='change_password send'type="submit" value="Изменить">
                             {% csrf_token %}
                         </form>
-
+                   <div class="box"></div>
                     </div>
 
                 </div>
-            </div>
         </div>
 
 {%endblock%}
