@@ -13,5 +13,6 @@ class About_goods(models.Model):
 class Goods_of_user(models.Model):
     userName =  models.TextField()
     goodId  =   models.IntegerField()
+    checked  =   models.IntegerField(default = 1)
     def __str__(self):
         return self.userName

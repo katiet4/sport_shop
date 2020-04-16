@@ -7,12 +7,16 @@ from django.contrib import auth
 from django.contrib.auth.hashers import check_password
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponseRedirect
+from Main.basket_new_goods import calculate_new
 
 def checkAunt(request, what, dict, admin = 0):
     if request.user.is_authenticated:
+        count = calculate_new(request.session["user"])
+        newGoods = "" if count == 0 else count
         ID = request.session['id']
         usr = User.objects.get(id = ID)
         dict['admin'] = usr.is_staff
+        dict["goodsInBasket"] = newGoods
         if(admin):
             if(dict['admin']):
                 return render(request, "CabinetTemp/"+ what +".html", dict)
@@ -101,7 +105,7 @@ def cabinet_admin_orders(request):
                     i.delete()
                 return HttpResponseRedirect("/cabinet/admin/orders")
             for i in orders:
-                i.status = stat   
+                i.status = stat
                 i.save()
             orders = Orders.objects.all().order_by('-id')
         except Exception as e:
