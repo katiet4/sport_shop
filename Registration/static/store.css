@@ -10,7 +10,7 @@
 .page_laout {
   display: flex;
   /* display: flex; */
-  max-width: 1480px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 /* Левое меню */
@@ -55,9 +55,18 @@
   text-align: center;
 }
 .good2 {
-  border: 1px solid grey;
-  background: white;
-  min-width: 298px;
+  background: #fff;
+  max-width: 290px;
+  margin: 0 15px 15px 0;
+  box-shadow: 0 16px 40px rgba(63,83,104,.1),0 4px 8px rgba(0,0,0,.1);
+border-radius: 4px;
+}
+.good2:hover{
+  transition: all .5s ease;
+  position: relative;
+    opacity: 1;
+    transform: scale(1.1);
+
 }
 .goood {
   height: 278px;

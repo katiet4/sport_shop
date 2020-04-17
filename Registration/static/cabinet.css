@@ -22,7 +22,7 @@
 .controlPanel a {
   color: black;
   padding: 10px 0;
-  font-size: 14px;
+  font-size: .8rem;
 }
 .controlPanel a:after {
   font-weight: 700;
@@ -211,41 +211,54 @@ form[name='avaForm'] img {
 .mainBlock-right form > input{
   margin: 15px 0;
 }
-.change_password{
-  padding: 15px;
-}
-.send{
-  background-color: #db5e5c;
-  border: 1px solid #db5e5c;
-  border-radius: 10px;
-  color: white;
-  transition: all .5s ease;
-}
-.send:hover{
-  color: yellow;
-}
+
 .info hr{
   margin:10px 0;
 }
 /* Setting */
-.mainBlock{
-  display: grid;
-  grid-template-areas: 
-  ". ava ."
-  "pass . username"
-}
-.box{
-  grid-area: box;
-}
-form[name="avaForm"]{
-  grid-area: ava;
-}
-form[name="passwordsForm"]{
-  grid-area: pass;
-}
-form[name="usernameForm"]{
-  grid-area: username;
-}
+
 .send{
   margin:15px 0;
+}
+.input, .send{
+  margin: 0.25rem;
+}
+.input{
+border-radius: 0.25rem;
+padding: 0.5rem 0.75rem;
+font-size: 1rem;
+line-height: 1.25;
+color: #55595c;
+background-color: #fff;
+background-image: none;
+background-clip: padding-box;
+border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.send{
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: pointer;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+.send:focus{
+  box-shadow: -0.25rem -0.25rem -0.25rem blue;
+}
+.input:focus{
+  color: #55595c;
+  background-color: #fff;
+  border-color: #66afe9;
+  outline: none;
+}
+input[name='file']{
+  display: none;
 }
