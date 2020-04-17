@@ -19,17 +19,17 @@
                         </form>
                         <form name="passwordsForm" action="/cabinet/settings/reset_password" method="post" onsubmit="return passwords();">
                             <h3>Изменение пароля:  </h3>
-                            <input class="change_password" type="password" name="old" id="" placeholder="Старый пароль">
-                            <input class="change_password" type="password" name="new" id="" placeholder="Новый пароль">
-                            <input class="change_password" type="password" name="repeat_new" id="" placeholder="Повторить новый пароль">
+                            <input class="change_password input" type="password" name="old" id="" placeholder="Старый пароль">
+                            <input class="change_password input" type="password" name="new" id="" placeholder="Новый пароль">
+                            <input class="change_password input" type="password" name="repeat_new" id="" placeholder="Повторить новый пароль">
                             <input class='change_password send'type="submit" value="Изменить">
                             {% csrf_token %}
                         </form>
                         <form name="usernameForm" action="/cabinet/settings/reset_username" method="post" onsubmit="return userLogin();">
                             <h3>Изменение логина и email:  </h3>
-                            <input class="change_password" type="password" name="password" id="" placeholder="Пароль">
-                            <input class="change_password" type="text" name="newusername" id="" placeholder="Новый логин">
-                            <input class="change_password" type="text" name="newemail" id="" placeholder="Новый email">
+                            <input class="change_password input" type="password" name="password" id="" placeholder="Пароль">
+                            <input class="change_password input" type="text" name="newusername" id="" placeholder="Новый логин">
+                            <input class="change_password input" type="text" name="newemail" id="" placeholder="Новый email">
                             <input class='change_password send'type="submit" value="Изменить">
                             {% csrf_token %}
                         </form>
