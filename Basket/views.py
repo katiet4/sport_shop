@@ -2,9 +2,11 @@ from django.shortcuts import render
 from Goods.models import About_goods, Goods_of_user
 from Cabinet.models import Orders
 from django.http import HttpResponseRedirect
+from Main.basket_new_goods import confirm_check
 # Create your views here.
 def basket(request):
 	if request.user.is_authenticated:
+		confirm_check(request.session["user"])
 		aunt = True
 	else:
 		aunt = False

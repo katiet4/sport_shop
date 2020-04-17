@@ -4,14 +4,17 @@ from Cabinet.models import Comments
 from Login.models import Profile_of_user
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
-
+from Main.basket_new_goods import calculate_new
 class views:
 
     def __init__(self):
         self.aunt = False
 
     def rendering(self, category, request):
+        newGoods = ""
         if request.user.is_authenticated:
+            count = calculate_new(request.session["user"])
+            newGoods = "" if count == 0 else count
             self.aunt = True
         else:
             self.aunt = False
@@ -19,16 +22,21 @@ class views:
 
 
         return render(request, 'MainTemp/main.html', {"aunt":self.aunt,
-                        "goods":goods})
+                        "goods":goods,
+                        "goodsInBasket" : newGoods})
 
     def goods(self, request):
+        newGoods = ""
         if request.user.is_authenticated:
+            count = calculate_new(request.session["user"])
+            newGoods = "" if count == 0 else count
             self.aunt = True
         else:
             self.aunt = False
         goods = About_goods.objects.all().order_by("-id")
         return render(request, 'MainTemp/main.html', {"aunt":self.aunt,
-                        "goods":goods})
+                        "goods":goods,
+                        "goodsInBasket" : newGoods})
 
     def games_with_balls(self, request):
 
@@ -73,13 +81,17 @@ class views:
                 return HttpResponseRedirect("/store")
 
             goodOfUser = Goods_of_user(userName = request.session["user"],
-                                        goodId = ID)
+                                        goodId = ID,
+                                        checked = 0)
             goodOfUser.save()
         except Exception as e:
             return HttpResponseRedirect("/store/"+ID)
         return HttpResponseRedirect("/store")
     def goods_by_id(self, request, ID):
+        newGoods = ""
         if request.user.is_authenticated:
+            count = calculate_new(request.session["user"])
+            newGoods = "" if count == 0 else count
             self.aunt = True
         else:
             self.aunt = False
@@ -123,4 +135,5 @@ class views:
                                                     "id"         :ID,
                                                     "comment"    :allInfoAboutComments,
                                                     "rating"     :good.rating,
-                                                    "aunt"       :self.aunt})
+                                                    "aunt"       :self.aunt,
+                                                     "goodsInBasket" : newGoods})
