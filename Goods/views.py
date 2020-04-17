@@ -41,7 +41,9 @@ class views:
     def games_with_balls(self, request):
 
         return self.rendering("games_with_balls", request)
+    def gifts(self, request):
 
+        return self.rendering("gifts", request)
     def bikes(self, request):
         return self.rendering("bikes", request)
 

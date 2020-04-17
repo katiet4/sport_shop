@@ -73,6 +73,8 @@ border-radius: 4px;
 }
 
 .goood img{
+  max-height: 280px;
+  max-width: 280px;
   transition: all .2s ease;    
 }
 .good_price {
@@ -105,4 +107,23 @@ border-radius: 4px;
   .content1{
     display: block;
   }
+}
+.gift{
+  animation: go-left-right 3s infinite alternate;
+    /* применить анимацию "go-left-right" на элементе
+       продолжительностью 3 секунды
+       количество раз: бесконечно (infinite)
+       менять направление анимации каждый раз (alternate)
+    */
+
+    position: relative;
+    border: 2px solid green;
+    width: 50px;
+    height: 20px;
+    background: rgb(218, 88, 109);
+    color: white;
+}
+@keyframes go-left-right {        /* объявляем имя анимации: "go-left-right" */
+  from { left: 0px; }             /* от: left: 0px */
+  to { left: calc(100% - 50px); } /* до: left: 100%-50px */
 }

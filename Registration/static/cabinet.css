@@ -128,15 +128,7 @@
   padding: 15px;
 }
 
-.mainBlock div:nth-child(2) > form {
-  float: right;
-  margin-right: 40px;
-}
-.mainBlock div:nth-child(2) > form > button {
-  padding: 5px;
-  border: 1px solid #fff;
-  background: #ddd;
-}
+
 .adminMenu button {
   width: 33.3%;
   height: 36px;
@@ -222,36 +214,6 @@ form[name='avaForm'] img {
 }
 .input, .send{
   margin: 0.25rem;
-}
-.input{
-border-radius: 0.25rem;
-padding: 0.5rem 0.75rem;
-font-size: 1rem;
-line-height: 1.25;
-color: #55595c;
-background-color: #fff;
-background-image: none;
-background-clip: padding-box;
-border: 1px solid rgba(0, 0, 0, 0.15);
-}
-.send{
-  display: inline-block;
-  font-weight: normal;
-  line-height: 1.25;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: pointer;
-  border: 1px solid transparent;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
-}
-.send:focus{
-  box-shadow: -0.25rem -0.25rem -0.25rem blue;
 }
 .input:focus{
   color: #55595c;

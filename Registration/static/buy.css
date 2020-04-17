@@ -55,13 +55,14 @@
   display: flex;
   margin: 20px;
 }
-.good_img {
+.good_img > img {
   margin: 0 20px 0 20px;
   border: 1px solid #ddd;
-  /* max-height: 280px;
-  max-width: 280px; */
+  max-height: 280px;
+  max-width: 280px;
   /* Надо тестить , то что выше */
-  box-shadow: 12px 16px 40px rgba(63,83,104,.1),0 4px 8px rgba(0,0,0,.1);
+  box-shadow: 12px 16px 40px rgba(63, 83, 104, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 .good_title {
@@ -71,7 +72,8 @@
   font-size: 28px;
   font-weight: normal;
 }
-.good_block, .reviows_block {
+.good_block,
+.reviows_block {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -88,14 +90,14 @@
 }
 .link {
   border-radius: 0.25rem;
-padding: 0.5rem 0.75rem;
-font-size: 1rem;
-line-height: 1.25;
-color: #55595c;
-background-color: #f7f7f9;
-background-image: none;
-background-clip: padding-box;
-border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #f7f7f9;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 .link:hover {
   transition: 0.5s;
@@ -104,8 +106,8 @@ border: 1px solid rgba(0, 0, 0, 0.15);
 .good_caption > div {
   padding: 15px;
 }
-.notlogon{
-width: 180px;
+.notlogon {
+  width: 180px;
 }
 /******************************/
 /******************************/
@@ -114,45 +116,74 @@ width: 180px;
 /******************************/
 /******************************/
 /******************************/
-.reviows_block{
+.reviows_block {
   background-color: white;
   margin-top: 20px;
 }
-.reviows{
+.reviows {
   padding: 20px;
 }
-.comment_block{
+.comment_block {
   width: 100%;
   display: inline-block;
   margin: 35px 0;
 }
-.comment{
+.comment {
   display: flex;
 }
-.comment_left{
+.comment_left {
   margin: 33px 0px;
 }
-.comment_right{
+.comment_right {
   width: 100%;
   margin-left: 15px;
 }
-.user_img img{
+.user_img img {
   width: 140px;
   height: 140px;
   border-radius: 100px;
   border: 1px solid black;
 }
-.user_rating{
+.user_rating {
   display: flex;
   justify-content: flex-end;
 }
-.send_comment{
+.send_comment {
   width: 100%;
 }
-.rating{
-  color: rgba(80,102,123,.5);
+.rating {
+  color: rgba(80, 102, 123, 0.5);
   margin-left: 15px;
 }
-.rating > p > span{
+.rating > p > span {
   color: #08d092;
+}
+.gift1 {
+  animation: n1 2s infinite alternate;
+  position: relative;
+}
+@keyframes n1 {
+  from {
+    text-shadow: aqua 1px 1px 4px, aqua 0 0 1em;
+  }
+  to {
+    text-shadow: red 1px 3px 5px red 2px 3px 1em;
+  }
+}
+.gift2 {
+  animation: n2 3s infinite alternate;
+  position: relative;
+  border: 2px solid green;
+  width: 50px;
+  height: 20px;
+  background: rgb(218, 88, 109);
+  color: white;
+}
+@keyframes n2 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: calc(100% - 50px);
+  }
 }
