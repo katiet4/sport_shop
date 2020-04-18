@@ -73,6 +73,8 @@ border-radius: 4px;
 }
 
 .goood img{
+  max-height: 280px;
+  max-width: 280px;
   transition: all .2s ease;    
 }
 .good_price {
@@ -104,5 +106,34 @@ border-radius: 4px;
   }
   .content1{
     display: block;
+  }
+}
+.gift1 {
+  animation: n1 2s infinite alternate;
+  position: relative;
+}
+@keyframes n1 {
+  from {
+    text-shadow: aqua 1px 1px 4px, aqua 0 0 1em;
+  }
+  to {
+    text-shadow: red 1px 3px 5px red 2px 3px 1em;
+  }
+}
+.gift2 {
+  animation: n2 3s infinite alternate;
+  position: relative;
+  border: 2px solid green;
+  width: 50px;
+  height: 20px;
+  background: rgb(218, 88, 109);
+  color: white;
+}
+@keyframes n2 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: calc(100% - 50px);
   }
 }

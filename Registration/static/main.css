@@ -1,15 +1,16 @@
 :root {
   --price: red;
 }
-html{
-  cursor: url('/static/cursor/normal.cur'), default;
+html {
+  cursor: url("/static/cursor/normal.cur"), default;
 }
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-  background: #fff;
+  background: #f7f8f9;
+  /* #f4f5fa */
   margin: 0;
   padding: 0;
   display: flex;
@@ -17,13 +18,17 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-.box h1,h2,p{
+.box h1,
+h2,
+p {
   font-weight: 300;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 }
 div,
-h1,h2,h3,
+h1,
+h2,
+h3,
 a,
 p,
 form,
@@ -64,6 +69,8 @@ li {
   /* flex: 1 0 auto; */
   background: rgba(0, 0, 0, 0.8);
   width: 100%;
+  box-shadow: 12px 16px 40px rgba(63, 83, 104, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .container {
   position: relative;
@@ -115,19 +122,19 @@ li {
 }
 
 @media only screen and (max-device-width: 768px) {
-  .bar img{
+  .bar img {
     display: none;
   }
-  .login{
+  .login {
     display: none;
   }
-  .footer-block img{
+  .footer-block img {
     display: none;
   }
-  .copyright{
+  .copyright {
     display: none;
   }
-  .footer-list{
+  .footer-list {
     margin: 0 auto;
   }
 }
@@ -144,7 +151,7 @@ li {
   /* bottom: 0; */
   /* flex-grow: 1; */
 }
-.nav-footer{
+.nav-footer {
   padding: 0 15px;
 }
 .footer-block {
@@ -178,23 +185,76 @@ li {
   padding: 0;
   background: none;
 }
+/*  */
+.input {
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+.button {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: pointer;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+
+
+
+
 
 /*  */
 /*  */
 /* Cursor's */
 /*  */
 /*  */
-a { cursor: url(/static/cursor/link.cur), progress !important; }
-html { cursor: url(/static/cursor/normal.cur), progress !important; }
-select { cursor: url(/static/normal.cur), progress !important; }
-label { cursor: url(/static/normal.cur), progress !important; }
-input[type=text] { cursor: url(/static/cursor/text.cur), progress !important; }
-input[type=password] { cursor: url(/static/cursor/text.cur), progress !important; }
-input[type=button] { cursor: url(/static/cursor/link.cur), progress !important; }
-input[type=submit] { cursor: url(/static/cursor/link.cur), progress !important; }
-input[type=file] { cursor: url(/static/cursor/link.cur), progress !important; }
-input[type=image] { cursor: url(/static/cursor/link.cur), progress !important; }
-div[id=PageScrollTop] { cursor: url(/static/cursor/link.cur), progress !important; }
+a {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
+html {
+  cursor: url(/static/cursor/normal.cur), progress !important;
+}
+select {
+  cursor: url(/static/normal.cur), progress !important;
+}
+label {
+  cursor: url(/static/normal.cur), progress !important;
+}
+input[type="text"] {
+  cursor: url(/static/cursor/text.cur), progress !important;
+}
+input[type="password"] {
+  cursor: url(/static/cursor/text.cur), progress !important;
+}
+input[type="button"] {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
+input[type="submit"] {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
+input[type="file"] {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
+input[type="image"] {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
+div[id="PageScrollTop"] {
+  cursor: url(/static/cursor/link.cur), progress !important;
+}
 
 /*  */
 /*  */
@@ -203,46 +263,49 @@ div[id=PageScrollTop] { cursor: url(/static/cursor/link.cur), progress !importan
 /*  */
 /*  */
 /*  */
-.user_status_admin{
+.user_status_admin {
   text-shadow: red 1px 1px 10px;
   color: red;
 }
-.user_status_member{
+.user_status_member {
   text-shadow: blue 1px 1px 10px;
   color: blue;
 }
-.user_status_vip{
+.user_status_vip {
   text-shadow: orange 1px 1px 10px;
   color: orange;
 }
-.user_name, .user_status_admin, .user_status_vip, .user_status_member{
+.user_name,
+.user_status_admin,
+.user_status_vip,
+.user_status_member {
   text-align: center;
 }
 .snowContainer {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left:0;
-	z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 #snow {
-	width: 100%;
-	height: 100%;
-	background-image: url("/static/images/snow/s1.png"), url("/static/snow/images/s2.png"), url("/static/snow/images/s3.png");
-	-webkit-animation: snow 20s linear infinite;
-	-moz-animation: snow 20s linear infinite;
-	-ms-animation: snow 20s linear infinite;
-	animation: snow 20s linear infinite;
+  width: 100%;
+  height: 100%;
+  background-image: url("/static/images/snow/s1.png"),
+    url("/static/snow/images/s2.png"), url("/static/snow/images/s3.png");
+  -webkit-animation: snow 20s linear infinite;
+  -moz-animation: snow 20s linear infinite;
+  -ms-animation: snow 20s linear infinite;
+  animation: snow 20s linear infinite;
 }
 
 @keyframes snow {
-	0% {
-		background-position: 0px 0px, 0px 0px, 0px 0px;
-	}
-	100% {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
     background-position: 500px 1000px, 400px 300px, 300px 300px;
-    
-	}
+  }
 }
