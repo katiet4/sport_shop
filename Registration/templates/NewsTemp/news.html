@@ -1,24 +1,29 @@
-{% extends "index.html" %}
-
-{%block head%}
-{% load static %}
-<link rel='stylesheet' href="{%static 'news.css' %}">
+{% extends "index.html" %} {%block head%} {% load static %}
+<link rel="stylesheet" href="{%static 'news.css' %}" />
+<script src="{%static 'slide.js'%}"></script>
+<script src="{%static 'control.js'%}"></script>
 <title>Main</title>
-{%endblock%}
-
-{%block content%}
-<div class='content'>
-  <div class='content_inner'>
-    <div class='banner'>
-      <div class='img'></div>
-    </div>
-    <div class='content_main'>
-      {% for i in news %}
-
-      <div class='text'>
-        <h1>{{i.title}}</h1>
-        <p>{{i.source.name}}<img src="{{i.urlToImage}}" alt=''></p>
-        <p>{{i.description}}</p>
+{%endblock%} {%block content%}
+<div class="banner">
+  <div id="img" class="img"></div>
+</div>
+<hr />
+<div class="content">
+  <div class="content_inner">
+    <div class="content_main">
+      <div class="news">
+        <div class="news_content">
+          {% for i in news %}
+          <div class="block">
+            <img src="{{i.urlToImage}}" alt="" />
+            <div class="block_content">
+              <p class="block_source_name">{{i.source.name}}</p>
+              <p class="block_title">{{i.title}}</p>
+              <p class="block_description">{{i.description}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
 
       <!-- "source": {
@@ -32,7 +37,6 @@
       "urlToImage": "https://cdn2.business-gazeta.ru/files/news/cf/465888.jpg",
       "publishedAt": "2020-04-21T19:30:31Z",
       "content": null -->
-      {% endfor %}
     </div>
   </div>
 </div>

@@ -131,7 +131,7 @@ class views:
             return HttpResponseRedirect("/store/goods/"+str(ID))
         return render(request, "BuyTemp/buy.html", {"price"      :good.price,
                                                     "name"       :good.name,
-                                                    "description":good.description,
+                                                    "description":good.description.split("\n"),
                                                     "image"      :good.image,
                                                     "count"      :good.count,
                                                     "id"         :ID,

@@ -15,6 +15,7 @@
 }
 /* Левое меню */
 .leftContent {
+  display: inline-table;
   border: 1px solid grey;
   border-radius: 3px;
   min-width: 260px;
@@ -23,7 +24,7 @@
   margin-right: 20px;
   background: white;
 }
-.leftContent a{
+.leftContent a {
   color: black;
 }
 .list_cat {
@@ -34,7 +35,7 @@
   border-bottom: 1px solid grey;
   padding: 10px;
 }
-.cat_link:last-child{
+.cat_link:last-child {
   border-bottom: 0;
 }
 
@@ -58,53 +59,53 @@
   background: #fff;
   max-width: 290px;
   margin: 0 15px 15px 0;
-  box-shadow: 0 16px 40px rgba(63,83,104,.1),0 4px 8px rgba(0,0,0,.1);
-border-radius: 4px;
+  box-shadow: 0 16px 40px rgba(63, 83, 104, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
-.good2:hover{
-  transition: all .5s ease;
+.good2:hover {
+  transition: all 0.5s ease;
   position: relative;
-    opacity: 1;
-    transform: scale(1.1);
-
+  opacity: 1;
+  transform: scale(1.1);
 }
 .goood {
   height: 278px;
 }
 
-.goood img{
+.goood img {
   max-height: 280px;
-  max-width: 280px;
-  transition: all .2s ease;    
+  max-width: 270px;
+  transition: all 0.2s ease;
 }
 .good_price {
   text-align: right;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-.good_name{
+.good_name {
   margin-bottom: 7px;
 }
 .good_buy p {
-    /* margin-top: 127px; */
-    font-family: 'Montserrat', sans-serif;
-    background: #DD5860;
-    border: 1px solid #DD5860;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 0 auto;
-    transition: all .5s ease;
+  /* margin-top: 127px; */
+  font-family: "Montserrat", sans-serif;
+  background: #dd5860;
+  border: 1px solid #dd5860;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
 }
-.good_buy p:hover{
-    color: white;
+.good_buy p:hover {
+  color: white;
 }
-.goood:hover img{
-    transition: all .5s ease;
+.goood:hover img {
+  transition: all 0.5s ease;
 }
 @media only screen and (max-device-width: 768px) {
-  .page_laout{
-    display: block;
+  .page_laout {
+    flex-direction: column;
+    align-items: center;
   }
-  .content1{
+  .content1 {
     display: block;
   }
 }
@@ -131,7 +132,7 @@ border-radius: 4px;
 }
 @keyframes n2 {
   from {
-    left: 0px;
+    left: 0;
   }
   to {
     left: calc(100% - 50px);

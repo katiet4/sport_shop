@@ -1,64 +1,62 @@
-{% extends "index.html"%}
-{%block title%}Login{%endblock%}
-
-
-{%block head%}
-{% load static %}
-<link rel='stylesheet' href="{%static 'login.css' %}">
-<script type="text/javascript" src="{%static 'validate.js' %}">
-
-</script>
-{%endblock%}
-
-
-
-
-{%block header%}
-{%endblock%}
-
-
-
-{%block content%}
-<div class='content'>
+{% extends "index.html"%} {%block title%}Login{%endblock%} {%block head%} {%load static %}
+<link rel="stylesheet" href="{%static 'login.css' %}" />
+<script type="text/javascript" src="{%static 'validate.js' %}"></script>
+{%endblock%} {%block header%} {%endblock%} {%block content%}
+<div class="content">
   <div class="contentBox">
     <div class="logBox box">
       <h2>Вход</h2>
-      <hr>
-      <form name="contact_form" action="" method="post" onsubmit="return validate_form_for_login();">
+      <hr />
+      <form
+        name="contact_form"
+        action=""
+        method="post"
+        onsubmit="return validate_form_for_login();"
+      >
         <p>Логин</p>
-        <input type="text" name="username" id="username" class="form-control">
+        <input type="text" name="username" id="username" class="form-control" />
         <p>Пароль</p>
-        <input type="password" name="password" id="password" class="form-control">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="form-control"
+        />
         <!-- <a href='#'>Забыли пароль?</a> -->
         <div class="button">
-          <button class='btn1' type="submit" name="send">Войти</button>
+          <button class="btn1" type="submit" name="send">Войти</button>
         </div>
         {% csrf_token %}
       </form>
     </div>
     <div class="new_user box">
       <h2>Зарегистрироваться</h2>
-      <hr>
+      <hr />
       <div>
         <p>Зарегистрируйтесь , для что бы покупать товары в нашем магазине.</p>
         <div class="button">
-          <button class="btn2"><a href="/registration/">Зарегистрироваться</a></button>
+          <button class="btn2">
+            <a href="/registration/">Зарегистрироваться</a>
+          </button>
         </div>
-        <form name = "recoverForm" onsubmit="return email_check();"
-              action="/login/recover_password/" method="POST" style="margin-top: 20px;">
-        <h2>Забыли пароль?</h2>
-      <hr>
-      <div>
-        <p>Введите ваш E-mail для восстановления пароля!</p>
-        <input class="form-control" type="text" name="email" id="">
-        <div class="button">
-          <button  class="btn3">Восстановить пароль</button >
-        </div>
-        {% csrf_token %}
-      </form>
+        <form
+          name="recoverForm"
+          onsubmit="return email_check();"
+          action="/login/recover_password/"
+          method="POST"
+          style="margin-top: 20px;"
+        >
+          <h2>Забыли пароль?</h2>
+          <hr />
+          <p>Введите ваш E-mail для восстановления пароля!</p>
+          <input class="form-control" type="text" name="email" id="" />
+          <div class="button">
+            <button class="btn3">Восстановить пароль</button>
+          </div>
+          {% csrf_token %}
+        </form>
       </div>
     </div>
   </div>
 </div>
-<p></p>
 {%endblock%}

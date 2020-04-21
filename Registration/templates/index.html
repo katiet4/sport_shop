@@ -1,74 +1,81 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'main.css' %}" />
+    <link
+      href="//fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+    <script src="{%static 'slide.js'%}"></script>
+    {%block head%} {%endblock%}
+  </head>
 
-<head>
-	<meta charset='utf-8'>
-	{% load static %}
-	<link rel='stylesheet' href="{%static 'main.css' %}">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic'
-		rel='stylesheet'>
-	{%block head%}
-	{%endblock%}
-</head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="bar">
+          <div class="menu">
+            <div>
+              <!--              <a href="/admin/">Админ-панель</a>-->
+              <a href="/main/">Новости</a>
+            </div>
+            <div class="catalg">
+              <a href="/store/">Каталог</a>
+            </div>
+            <div>
+              <a href="/basket/"
+                >Корзина <span style="color: red;">{{goodsInBasket}}</span></a
+              >
+            </div>
+          </div>
+          <div class="login">
+            {%if aunt%}
+            <button><a class="login" href="/login/logout">Выйти</a></button>
+            <button><a class="login" href="/cabinet">Личный кабинет</a></button>
+            {% else %}
+            <button><a class="login" href="/login">Войти</a></button>
+            <button>
+              <a class="login" href="/registration">Регистрация</a>
+            </button>
+            {%endif%}
+          </div>
+          <div class="blockLog" style="display: none;">
+            <a>Личный кабинет</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-<body>
+    {%block content%} {%endblock%}
 
-	<header class='header'>
-		<div class='container'>
-			<nav class='bar'>
-				<a href="/main/"><img src='/static/images/shop.png' alt=''></a>
-				<div class='menu'>
-					<div>
-						<a href='/admin/'>Админ-панель</a>
-						<!-- <a href='/main/'>Новости</a> -->
-					</div>
-					<div>
-						<a href='/store/'>Магазин</a>
-					</div>
-					<div>
-						<a href='/basket/'>Корзина <span style = "color:red;">{{goodsInBasket}}</span></a>
-					</div>
-				</div>
-				<div class='login'>
-					{%if aunt%}
-					<button><a class="login" href="/login/logout">Выйти</a></button>
-					<button><a class="login" href="/cabinet">Личный кабинет</a></button>
-					{% else %}
-					<button><a class="login" href="/login">Войти</a></button>
-					<button><a class="login" href="/registration">Регистрация</a></button>
-					{%endif%}
-				</div>
-				<div class='blockLog' style='display: none;'><a>Личный кабинет</a></div>
-			</nav>
-		</div>
-	</header>
-
-	{%block content%}
-	{%endblock%}
-	</div>
-
-	<footer class='footer'>
-		<div class='nav-footer'>
-			<div class='footer-block'>
-				<img src="/static/images/shop.png" alt="">
-				<ul class='footer-list'>
-					<li><a href='/about/'>О нас</a></li>
-					<li><a href='/about/'>Что-то там</a></li>
-					<li><a href=''>Shop</a></li>
-				</ul>
-				<div class='copyright'>
-					<span>© 2020 <span itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
-							<span itemprop="name">Official Shop</span></span>
-					</span>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<div class="snowContainer">
-
-		<div id="snow"></div>
-
-	</div>
-</body>
-
+    <footer class="footer">
+      <div class="nav-footer">
+        <div class="footer-block">
+          <img src="/static/images/shop.png" alt="" />
+          <ul class="footer-list">
+            <li><a href="/about/">О нас</a></li>
+            <li><a href="/about/">Что-то там</a></li>
+            <li><a href="">Shop</a></li>
+          </ul>
+          <div class="copyright">
+            <span
+              >© 2020
+              <span
+                itemprop="publisher"
+                itemscope=""
+                itemtype="//schema.org/Organization"
+              >
+                <span itemprop="name">Official Shop</span></span
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="snowContainer">
+      <div id="snow"></div>
+    </div>
+  </body>
 </html>

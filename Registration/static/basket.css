@@ -7,11 +7,8 @@
 }
 .page_laout {
   max-width: 1480px;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  width: 100%;
+  margin: 30px auto;
   flex-grow: 1;
 }
 .basket {
@@ -29,8 +26,9 @@
   width: 100%;
   margin: 20px 20px 50px 0;
 }
-.list_basket{
-  box-shadow: 12px 16px 40px rgba(63,83,104,.1),0 4px 8px rgba(0,0,0,.1);
+.list_basket {
+  box-shadow: 12px 16px 40px rgba(63, 83, 104, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 .list_item {
@@ -91,62 +89,63 @@
 }
 .item_col_button_min {
   border-radius: 8px 0 0 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 8px;
   border-right: none;
   color: #ddd;
 }
 .item_col_button_plus {
-  border-radius: 8px 0 0 8px;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 8px;
-  border-right: none;
+  border-radius: 0 8px 8px 0;
+  border-left: none;
   color: #ddd;
+}
+.item_col_button > p {
+  text-align: center;
 }
 .item_col_input {
   width: calc(100% / 3);
   box-sizing: border-box;
+  text-align: center;
   height: 36px;
   border: none;
 }
-.page_laout >div:first-child>h2{
+.page_laout > div:first-child > h2 {
   color: #2c2d30;
   margin: 1rem 0;
   font-size: 1.5rem;
 }
 /* Block buy */
 .block_buy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #fff;
   height: 200px;
-  width: 160px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 350px;
   padding: 20px;
   font-weight: bold;
   font-size: 20px;
-  box-shadow: 12px 16px 40px rgba(63,83,104,.1),0 4px 8px rgba(0,0,0,.1);
-  border-radius: 4px;
+  box-shadow: 12px 16px 40px rgba(63, 83, 104, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .block_buy_button {
-  border: 2px solid #DD5860;
+  border: 2px solid #dd5860;
   border-radius: 15px;
-  background: #DD5860;
+  background: #dd5860;
   padding: 15px;
   width: 100%;
   color: white;
   font-size: 20px;
   margin-top: 90px;
 }
+.block_buy > div:first-child {
+  text-align: center;
+}
 @media only screen and (max-device-width: 768px) {
-.conteiner{
-  flex-direction: column;
-}
-.conteienr_list{
-  margin: 0 auto;
-}
+  .conteiner {
+    flex-direction: column;
+  }
+  .conteienr_list {
+    margin: 0 auto;
+  }
 }

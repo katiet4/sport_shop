@@ -2,14 +2,18 @@
   --price: red;
 }
 html {
-  cursor: url("/static/cursor/normal.cur"), default;
 }
+
+html {
+  cursor: url(/static/cursor/normal.cur), default;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  background: #f7f8f9;
+  background: #ffffff;
   /* #f4f5fa */
   margin: 0;
   padding: 0;
@@ -21,9 +25,31 @@ body {
 .box h1,
 h2,
 p {
-  font-weight: 300;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+
+  position: relative;
+  z-index: 1;
+  /*display: inline-block;*/
+  padding: 0 10px;
+  opacity: 0.8;
+  background: no-repeat;
+  text-decoration: none;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: -7px;
+
+  /*font-weight: 300;*/
+  /*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,*/
+  /*  "Helvetica Neue", Arial, sans-serif;*/
+}
+h1 {
+  line-height: 2.1;
 }
 div,
 h1,
@@ -46,11 +72,20 @@ button {
 a {
   color: white;
   text-decoration: none;
-  /* cursor: url('/static/cursor/link.cur'), pointer; */
 }
 hr {
-  border: 1px solid;
-  border-color: #ddd;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #ddd;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #ddd;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #ddd;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
 }
 ul,
 li {
@@ -65,7 +100,6 @@ li {
 }
 /* Header */
 .header {
-  display: table;
   /* flex: 1 0 auto; */
   background: rgba(0, 0, 0, 0.8);
   width: 100%;
@@ -80,7 +114,9 @@ li {
 .bar {
   display: flex;
   align-items: center;
-  padding: 5px 0;
+  text-align: center;
+  height: 48px;
+  max-height: 44px;
   /* justify-content: space-between; */
 }
 .menu {
@@ -88,17 +124,11 @@ li {
   display: flex;
   flex: 2;
   justify-content: space-evenly;
-  /* margin: 0 auto; */
+  margin: 0 auto;
 }
-.menu div {
-  /* justify-content: space-between; */
-  /* margin: 0 15px; */
-  font-size: 19px;
-  padding: 3px;
-}
+
 .menu div a {
   /* font-size: 32px; */
-  padding: 5px 0;
   color: #fff;
   transition: all 0.5s ease;
 }
@@ -108,11 +138,6 @@ li {
   text-shadow: 0 0 10px white;
 }
 .login {
-  /* flex: 1; */
-  /* justify-content: flex-end; */
-  /* margin: 25px; */
-  /* align-items: center; */
-  /* font-size: 15px; */
   color: white;
   transition: all 0.2s ease-in-out;
 }
@@ -162,7 +187,6 @@ li {
 }
 .footer-list {
   display: flex;
-  padding: 23.2333px;
 }
 .footer-list li {
   margin: 0 20px;
@@ -211,11 +235,6 @@ li {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
 }
-
-
-
-
-
 
 /*  */
 /*  */
@@ -293,8 +312,8 @@ div[id="PageScrollTop"] {
 #snow {
   width: 100%;
   height: 100%;
-  background-image: url("/static/images/snow/s1.png"),
-    url("/static/snow/images/s2.png"), url("/static/snow/images/s3.png");
+  background-image: url(/static/images/snow/s1.png),
+    url(/static/snow/images/s2.png), url(/static/snow/images/s3.png);
   -webkit-animation: snow 20s linear infinite;
   -moz-animation: snow 20s linear infinite;
   -ms-animation: snow 20s linear infinite;
@@ -303,7 +322,7 @@ div[id="PageScrollTop"] {
 
 @keyframes snow {
   0% {
-    background-position: 0px 0px, 0px 0px, 0px 0px;
+    background-position: 0 0, 0 0, 0 0;
   }
   100% {
     background-position: 500px 1000px, 400px 300px, 300px 300px;

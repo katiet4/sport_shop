@@ -3,10 +3,13 @@
 /******************************************************/
 
 .img {
-  background: url(/static/images/banner.jpg) no-repeat;
-  height: 317px;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  background-image: url(//cdn.sportshop.com/media/easybanner/Slidebanner-basketbal-home_1.jpg);
+  list-style: none;
+  position: relative;
+  /*width: 1865px;*/
+  height: 502px;
+  background-size: cover;
+  background-position: center center;
 }
 .content {
   max-width: 1340px;
@@ -45,4 +48,38 @@
 }
 .text3 img {
   float: right;
+}
+/* Новостные блоки */
+.news_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  max-width: 356px;
+  margin: 10px 0;
+}
+.block img {
+  max-width: 356px;
+  max-height: 187px;
+}
+.block_title {
+  font-weight: bolder;
+}
+.block_source_name {
+  color: #fb2f77;
+}
+.block_content {
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(63, 83, 104, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.block_description {
+  line-height: 2;
+}
+hr {
+  border: 1px solid #ddd;
+  margin: 10px;
 }

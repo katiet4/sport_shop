@@ -1,45 +1,91 @@
-{%extends "CabinetTemp/cabinet.html"%}
-{%load static%}
+{%extends "CabinetTemp/cabinet.html"%} {%load static%}
 <script src="{%static 'validate.js' %}"></script>
 {%block content_in_cabinet%}
 
-        <div class="settingBlock">
-            <div class="info">
-                <div class='blockName'>
-                    <h2>Настройки</h2>
-                </div>
-                <hr>
-                <div class='mainBlock'>
-                        <form name="avaForm" action="/cabinet/settings/upload_file" method="post" enctype="multipart/form-data">
-                            <h3>Изменение аватарки:</h3>
-                            <img src="{{ava}}" title="Аватар пользователя">
-                            <input type="file" accept=".jpg, .jpeg, .png" name="file">
-                            <input class='button' type="submit" value="Загрузить">
-                            {% csrf_token %}
-                        </form>
-                        <form name="passwordsForm" action="/cabinet/settings/reset_password" method="post" onsubmit="return passwords();">
-                            <h3>Изменение пароля:  </h3>
-                            <input class="input" type="password" name="old" id="" placeholder="Старый пароль">
-                            <input class="input" type="password" name="new" id="" placeholder="Новый пароль">
-                            <input class="input" type="password" name="repeat_new" id="" placeholder="Повторить новый пароль">
-                            <input class=' button'type="submit" value="Изменить">
-                            {% csrf_token %}
-                        </form>
-                        <div class="button">
-                            <p>Hello</p>
-                        </div>
-                        <form name="usernameForm" action="/cabinet/settings/reset_username" method="post" onsubmit="return userLogin();">
-                            <h3>Изменение логина и email:  </h3>
-                            <input class="input" type="password" name="password" id="" placeholder="Пароль">
-                            <input class="input" type="text" name="newusername" id="" placeholder="Новый логин">
-                            <input class="input" type="text" name="newemail" id="" placeholder="Новый email">
-                            <input class='button'type="submit" value="Изменить">
-                            {% csrf_token %}
-                        </form>
-                   <div class="box"></div>
-                    </div>
-
-                </div>
-        </div>
+<div class="settingBlock">
+  <div class="info">
+    <div class="blockName">
+      <h2>Настройки</h2>
+    </div>
+    <hr />
+    <div class="mainBlock">
+      <form
+        name="avaForm"
+        action="/cabinet/settings/upload_file"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <h3>Изменение аватарки:</h3>
+        <img src="{{ava}}" title="Аватар пользователя" />
+        <input type="file" accept=".jpg, .jpeg, .png" name="file" />
+        <input class="button" type="submit" value="Загрузить" />
+        {% csrf_token %}
+      </form>
+      <form
+        name="passwordsForm"
+        action="/cabinet/settings/reset_password"
+        method="post"
+        onsubmit="return passwords();"
+      >
+        <h3>Изменение пароля:</h3>
+        <input
+          class="input"
+          type="password"
+          name="old"
+          id=""
+          placeholder="Старый пароль"
+        />
+        <input
+          class="input"
+          type="password"
+          name="new"
+          id=""
+          placeholder="Новый пароль"
+        />
+        <input
+          class="input"
+          type="password"
+          name="repeat_new"
+          id=""
+          placeholder="Повторить новый пароль"
+        />
+        <input class="button" type="submit" value="Изменить" />
+        {% csrf_token %}
+      </form>
+      <form
+        name="usernameForm"
+        action="/cabinet/settings/reset_username"
+        method="post"
+        onsubmit="return userLogin();"
+      >
+        <h3>Изменение логина и email:</h3>
+        <input
+          class="input"
+          type="password"
+          name="password"
+          id=""
+          placeholder="Пароль"
+        />
+        <input
+          class="input"
+          type="text"
+          name="newusername"
+          id=""
+          placeholder="Новый логин"
+        />
+        <input
+          class="input"
+          type="text"
+          name="newemail"
+          id=""
+          placeholder="Новый email"
+        />
+        <input class="button" type="submit" value="Изменить" />
+        {% csrf_token %}
+      </form>
+      <div class="box"></div>
+    </div>
+  </div>
+</div>
 
 {%endblock%}

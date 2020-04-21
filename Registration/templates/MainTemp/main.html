@@ -1,15 +1,23 @@
 {% extends "index.html"%} {%block head%} {% load static %}
 <link rel="stylesheet" href="{%static 'store.css'%}" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
 <title>Main</title>
 {%endblock%}{%block content%}
 <div class="content">
   <div class="page_laout">
     <div class="leftContent">
-      <div class="list_cat"><span class="llist_cat"><a style=" color: white" href="/store/">Категории</a></span></div>
+      <div class="list_cat">
+        <span class="llist_cat"
+          ><a style="color: white;" href="/store/">Категории</a></span
+        >
+      </div>
       <div class="categories">
-        <div class="cat_link"><a class='gift1' href="/gifts">Подарок на Новый Год</a></div>
-        <div class="cat_link"><a class='gift2' href="/gifts">Gift's</a></div>
+        <div class="cat_link">
+          <a class="gift1" href="/store/gifts">Подарок на Новый Год</a>
+        </div>
+        <div class="cat_link">
+          <a class="gift2" href="/store/gifts">Gift's</a>
+        </div>
         <div class="cat_link">
           <a href="/store/games_with_balls">Игры с мячом</a>
         </div>
@@ -49,20 +57,22 @@
           <div class="good1">
             {%load static%}
             <div class="goood">
-              <img src="/static/{{i.image}}" />
+              <img id="img" src="/static/{{i.image}}" />
             </div>
             <div class="good1_">
               <div class="good_price">
-                <p style="font-size: 26px; color: var(--price);">{{i.price}}₽</p>
+                <p style="font-size: 26px; color: var(--price);">
+                  {{i.price}}₽
+                </p>
               </div>
               <div class="good_name">
                 <a href="goods/{{i.id}}">
                   <p>{{i.name}}</p>
                 </a>
               </div>
-              <div class='good_buy button'>
+              <div class="good_buy button">
                 <a class="button" href="goods/{{i.id}}">
-                  <p class='button'>Купить</p>
+                  <p class="button">Купить</p>
                 </a>
               </div>
             </div>
