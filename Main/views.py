@@ -1,16 +1,15 @@
 from django.shortcuts import render
-from Main.models import News
 from Main.basket_new_goods import calculate_new
+import json
+import requests
 # Create your views here.
 class views:
     def __init__(self):
         self.aunt = False
 
     def rendering(self, request, newGoods):
-        news = News.objects.all().order_by("-id")[:5]
-        for i in range(0,len(news)):
-            news[i].text = news[i].text[0:300] + "..."
-        return render(request, 'NewsTemp/news.html', {"aunt":self.aunt, "news":news, "goodsInBasket" : newGoods })
+        sportNews = requests.get("http://newsapi.org/v2/top-headlines?country=ru&category=sports&apiKey=4df71164a27d4abb98b0d0c9b3743e23")
+        return render(request, 'NewsTemp/news.html', {"aunt":self.aunt, "news":sportNews.json()["articles"], "goodsInBasket" : newGoods, })
     def main(self, request):
         newGoods = ""
         if request.user.is_authenticated:

@@ -17,9 +17,21 @@
 
       <div class='text'>
         <h1>{{i.title}}</h1>
-        <p>{{i.text}}<img src="/static/{{i.image}}" alt=''></p>
+        <p>{{i.source.name}}<img src="{{i.urlToImage}}" alt=''></p>
+        <p>{{i.description}}</p>
       </div>
 
+      <!-- "source": {
+      "id": null,
+      "name": "Business-gazeta.ru"
+      },
+      "author": "БИЗНЕС Online",
+      "title": "В Беларуси 23 игрока хоккейной команды заразились COVID-19 - БИЗНЕС Online",
+      "description": "23 игрока белорусского хоккейного клуба &laquo;Неман&raquo; заразились COVID-19, сообщает Tribuna.com со&nbsp;ссылкой на&nbsp;телеграм-канал NEXTA Live.",
+      "url": "https://www.business-gazeta.ru/news/465888",
+      "urlToImage": "https://cdn2.business-gazeta.ru/files/news/cf/465888.jpg",
+      "publishedAt": "2020-04-21T19:30:31Z",
+      "content": null -->
       {% endfor %}
     </div>
   </div>
