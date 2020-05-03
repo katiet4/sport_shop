@@ -18,7 +18,6 @@
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .contentBoxIn {
-  display:;
   background: #fff;
   line-height: 30px;
   padding: 60px;
@@ -27,7 +26,7 @@
   box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .btn button {
-  margin-top: 19.9167px;
+  margin-top: 20px;
   background: #db5e5c;
   font-weight: 700;
   font-size: 14px;
