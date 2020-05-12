@@ -14,6 +14,7 @@
   width: 68%;
   flex-grow: 1;
 }
+
 /* Левое меню */
 .leftContent {
   display: inline-table;
@@ -152,11 +153,11 @@
   resize: none;
   }
 .rating {
-  color: rgba(80, 102, 123, 0.5);
+  color: black;
   margin-left: 15px;
 }
 .rating > p > span {
-  color: #08d092;
+  color: red;
 }
 .gift1 {
   animation: n1 2s infinite alternate;

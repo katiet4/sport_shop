@@ -26,12 +26,12 @@
                 <div class="item_col1" style="display: flex;">
 
 
-                  <div class="item_col_button item_col_button_min" onclick='minus("{{i.idForPlusAndMinus}}")'><p>-</p></div>
+                  <div class="item_col_button item_col_button_min" onclick='minus("{{i.idForPlusAndMinus}}")'><p style="color: black;">-</p></div>
 
                   <input id="{{i.idForPlusAndMinus}}" name="count-{{i.idForPlusAndMinus}}" class='item_col_input' type="text"
                     value='1' readonly>
 
-                    <div  class='item_col_button item_col_button_plus' onclick='plus("{{i.idForPlusAndMinus}}")'><p>+</p></div> <!-- Кол-во товара, value=1 -->
+                    <div  class='item_col_button item_col_button_plus' onclick='plus("{{i.idForPlusAndMinus}}")'><p style="color: black;">+</p></div> <!-- Кол-во товара, value=1 -->
                 </div>
               </div>
               <input type="hidden" name="good-{{i.idForPlusAndMinus}}" value="{{i.id}}">
