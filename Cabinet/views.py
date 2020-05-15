@@ -8,7 +8,7 @@ from django.contrib.auth.hashers import check_password
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponseRedirect
 from Main.basket_new_goods import calculate_new
-
+from PIL import Image
 def checkAunt(request, what, dict, admin = 0):
     if request.user.is_authenticated:
         count = calculate_new(request.session["user"])
@@ -162,11 +162,13 @@ def cabinet_settings(request):
 def cabinet_settings_upload_file(request):
     if request.user.is_authenticated:
         try:
-            if request.method == 'POST' and request.FILES['file']:
+            if request.method == 'POST' and request.FILES['file'] and request.FILES['file'].size < 2000000:
+                print(dir(request.FILES['file']))
                 file = request.FILES['file']
                 fs = FileSystemStorage()
                 filename = fs.save(file.name, file)
                 uploaded_file_url = fs.url(filename)
+                Image.open("Registration/static" + uploaded_file_url)
                 profile = Profile_of_user.objects.get(userId = request.session['id'])
                 profile.userImg = "/static" + uploaded_file_url
                 profile.save()
