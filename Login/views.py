@@ -45,12 +45,9 @@ def recover_password(request):
                 url = generateSURL(URL_for_reset)
                 addUrlToBD = URL_for_reset(codeURL = url, userId = user.id)
                 addUrlToBD.save()
-                try:
-                    HOSTNAME = socket.gethostip()
-                    print(HOSTNAME)
-                except:
-                    HOSTNAME = '127.0.0.1:8000'
-                HOSTNAME = '127.0.0.1:8000'
+
+                HOSTNAME = '127.0.0.1:8000' # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! YOUR HOSTNAME
+
                 m = ("To restore your password, follow this link: http://" +
                         HOSTNAME + "/login/recover_password/" + url)
                 try:

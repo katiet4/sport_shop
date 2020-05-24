@@ -162,13 +162,16 @@ def cabinet_settings(request):
 def cabinet_settings_upload_file(request):
     if request.user.is_authenticated:
         try:
+            print(request.FILES['file'].size)
             if request.method == 'POST' and request.FILES['file'] and request.FILES['file'].size < 2000000:
                 print(dir(request.FILES['file']))
                 file = request.FILES['file']
+                print(dir(file))
                 fs = FileSystemStorage()
                 filename = fs.save(file.name, file)
                 uploaded_file_url = fs.url(filename)
-                Image.open("Registration/static" + uploaded_file_url)
+                img = Image.open("Registration/static" + uploaded_file_url).resize((336,336))
+                img.save("Registration/static" + uploaded_file_url)
                 profile = Profile_of_user.objects.get(userId = request.session['id'])
                 profile.userImg = "/static" + uploaded_file_url
                 profile.save()
