@@ -1,3 +1,18 @@
+
+.assessment{
+display: flex;
+}
+.price_and_info{
+  margin-left: 1%;
+display: flex;
+}
+.assessment p {
+font-size: 26px;
+}
+.price_and_info .good_price{
+ padding-left:3%;
+ font-size: 30px;
+}
 /* Задаем flex */
 .main {
   padding: 30px;
@@ -85,7 +100,7 @@
 .good_price {
   font-size: 26px;
   color: var(--price);
-  text-shadow: 0 0 5px var(--price);
+  /*text-shadow: 0 0 5px var(--price);*/
 }
 .link {
   border-radius: 0.25rem;

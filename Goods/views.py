@@ -89,6 +89,7 @@ class views:
         except Exception as e:
             return HttpResponseRedirect("/store/"+ID)
         return HttpResponseRedirect("/store")
+        
     def goods_by_id(self, request, ID):
         newGoods = ""
         if request.user.is_authenticated:

@@ -61,13 +61,20 @@
           <img src="/static/{{image}}" alt="" />
         </div>
         <div class="good_status" >
-          <div class="good_price">
-            <span class="">{{price}}₽</span>
+          <div class = "price_and_info">
+
+          <div class = "assessment">  
+              <p>В наличие: {{count}}; Оценка:{{rating}}/5.</p>
           </div>
-          <div class="good_caption " >
-            <h2>Описание</h2>
-            <p>В наличие: {{count}} шт.</p>
-            <p>Оценка товара: <span>{{rating}}/5</span></p>
+
+          <div class="good_price">
+            <span> {{price}}₽</span>
+          </div>
+
+          
+        </div>
+          <div class="good_caption ">
+            <h2 style = "margin-left: 1%;" >Описание</h2>
             <div>
               {%for i in description%}
               <p>{{i}}</p>

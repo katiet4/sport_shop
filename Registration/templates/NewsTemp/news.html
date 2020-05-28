@@ -14,14 +14,17 @@
       <div class="news">
         <div class="news_content">
           {% for i in news %}
+          
           <div class="block">
             <img src="{{i.urlToImage}}" alt="" />
             <div class="block_content">
-              <p class="block_source_name">{{i.source.name}}</p>
+             <p class="block_source_name">{{i.source.name}}</p>
               <p class="block_title">{{i.title}}</p>
               <p class="block_description">{{i.description}}</p>
+              <a href="{{i.url}}" > <p class="block_source_name">Источник</p></a>
             </div>
           </div>
+          
           {% endfor %}
         </div>
       </div>
