@@ -65,7 +65,8 @@ def buy_all(request):
 			if (aboutGoods[i].count < 0):
 				return HttpResponseRedirect("/basket")
 		for i in range(num):
-			order = Orders(result = hiddenResult, userName = goodOfUser[i].userName, goodId = goodOfUser[i].goodId, count = count[i], numberOfOrder = numOfOrder)
+			order = Orders(result = hiddenResult, userName = goodOfUser[i].userName, goodId = goodOfUser[i].goodId,
+							 count = count[i], numberOfOrder = numOfOrder)
 			aboutGoods[i].save();
 			order.save()
 			goodOfUser[i].delete()

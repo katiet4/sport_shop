@@ -15,7 +15,7 @@ def registration(request):
 
             if  (User.objects.filter(username = username).exists() or
                 User.objects.filter(email = email).exists()):
-                return render(request, "RegTemp/registration.html") # Возвращать, если такой пользователь уже существует
+                return render(request, "RegTemp/registration.html", {"retry":"Такой аккаун уже существует"}) # Возвращать, если такой пользователь уже существует
 
             user = User.objects.create_user(username=username,
                                             email=email,
