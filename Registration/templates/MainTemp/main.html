@@ -1,5 +1,6 @@
 {% extends "index.html"%} {%block head%} {% load static %}
 <link rel="stylesheet" href="{%static 'store.css'%}" />
+<script type="text/javascript" src="{%static 'change_page_ajax.js'%}"></script>
 <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
 <title>Catalogue</title>
 {%endblock%}{%block content%}
@@ -74,7 +75,20 @@
         </div>
         {%endfor%}
       </div>
+
+      
     </div>
+
+  </div>
+  <div class = 'change_page' >
+      {%for i in pages%}
+        {%if i == middleNumber%}
+        <div class = 'num_page'><a href="/store/?page={{i}}"><p  style="color:white;">{{i}}<p></a></div>
+        {% else %}
+        <div class = 'num_page'><a href="/store/?page={{i}}"><p>{{i}}<p></a></div>
+        {%endif%}
+        
+      {% endfor %}
   </div>
 </div>
 

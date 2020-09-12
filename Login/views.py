@@ -22,7 +22,7 @@ def login(request):
                 return HttpResponseRedirect("/main")
 
             else:
-                return render(request, "LoginTemp/login.html") #Возвращает, если такого пользователя не существует
+                return render(request, "LoginTemp/login.html", {"retry":"Неверный логин/пароль"}) #Возвращает, если такого пользователя не существует
         else:
             return render(request, "LoginTemp/login.html")
 def logout(request):

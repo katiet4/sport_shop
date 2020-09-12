@@ -1,15 +1,39 @@
 {%extends "CabinetTemp/adminblock.html"%}
 {%load static%}
-<script type="text/javascript" src="{% static 'bbb.js' %}">
 </script>
 {%block adminblock%}
 
         <div class='a-c-block adminBlock'>
                 <form action="/cabinet/admin/management/" method = "POST">
-                  <button class='button' type="submit" onchange="bbb()">Сбросить ссылки восстановления</button>
+                  <button class='button' type="submit">Сбросить ссылки восстановления</button>
                     {% csrf_token %}
                 </form>
-
+                <hr>
+                <form action="/cabinet/admin/management/" method = "GET">
+                	<select>
+                		<option value="games_with_balls">Игры с мячом</option>
+                		<option value="bikes">Велосипеды</option>
+                		<option value="dumbbells_and_rods">Гантели и штанги</option>
+                		<option value="fighting_art">Боевые искусства</option>
+                		<option value="premium_attributes">Наградная атрибутика</option>
+                		<option value="billiards">Бильярд</option>
+                		<option value="jumpers">Джамперы</option>
+                		<option value="desktop_games">Настольные игры</option>
+                		<option value="baseball">Бейсбол</option>
+                		<option value="espandery">Эспандары</option>
+                		<option value="swimming">Плавание</option>
+                		<option value="darts">Дартс</option>
+                	</select><br>
+                <input type="text" name="count"><br>
+                <input type="text" name="price"><br>
+                <input type="text" name="name"><br>
+                <input type="text" name="image"><br>
+                <input type="text" name="rating" value = "1"><br>
+                <textarea name="description"></textarea><br>
+                  <button class='button' type="submit">Добавить товар</button>
+                    {% csrf_token %}
+                </form>
+                <hr>
         </div>
 
 {%endblock%}

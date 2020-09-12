@@ -7,7 +7,6 @@ urlpatterns = [
     
     re_path('buy/(?P<ID>[0-9]{1,10})/', views.views().buy, name="buy"),
     re_path('(?P<ID>[0-9]{1,10})/', views.views().goods_by_id, name="id"),
-    path('gifts/', views.views().gifts, name="gifts"),
     path('games_with_balls/', views.views().games_with_balls, name="games_with_balls"),
     path('bikes/', views.views().bikes, name="bikes"),
     path('dumbbells_and_rods/', views.views().dumbbells_and_rods, name="dumbbells_and_rods"),

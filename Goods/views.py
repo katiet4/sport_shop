@@ -5,12 +5,15 @@ from Login.models import Profile_of_user
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from Main.basket_new_goods import calculate_new
+from math import ceil
 class views:
 
     def __init__(self):
         self.aunt = False
+        self.countOfPages = 0
 
     def rendering(self, category, request):
+        
         newGoods = ""
         if request.user.is_authenticated:
             count = calculate_new(request.session["user"])
@@ -18,32 +21,37 @@ class views:
             self.aunt = True
         else:
             self.aunt = False
-        goods = About_goods.objects.filter(category=category).order_by("-id")
+        goods = ""
+        if category == "All":
+            goods = About_goods.objects.all().order_by("-id")
+        else:
+            goods = About_goods.objects.filter(category=category).order_by("-id")
 
+        #Перелистование страниц   
+        count_pages = ceil(len(goods)/8)
+        num_page = 1
+        
+        if request.GET:
+            num_page = int(request.GET["page"])
+            goods = goods[(num_page-1) * 8 : num_page * 8]
+        else:
+            goods = goods[:8]
+        show_pages_result = [i for i in range(num_page - 2, num_page + 3) if (i > 0 and i <= count_pages)]
+        if (show_pages_result == []):
+            show_pages_result = [1]
 
         return render(request, 'MainTemp/main.html', {"aunt":self.aunt,
                         "goods":goods,
-                        "goodsInBasket" : newGoods})
+                        "goodsInBasket" : newGoods,
+                        "pages" : show_pages_result,
+                        "middleNumber" : num_page})
 
     def goods(self, request):
-        newGoods = ""
-        if request.user.is_authenticated:
-            count = calculate_new(request.session["user"])
-            newGoods = "" if count == 0 else count
-            self.aunt = True
-        else:
-            self.aunt = False
-        goods = About_goods.objects.all().order_by("-id")
-        return render(request, 'MainTemp/main.html', {"aunt":self.aunt,
-                        "goods":goods,
-                        "goodsInBasket" : newGoods})
+        return self.rendering("All", request)
 
     def games_with_balls(self, request):
-
         return self.rendering("games_with_balls", request)
-    def gifts(self, request):
 
-        return self.rendering("gifts", request)
     def bikes(self, request):
         return self.rendering("bikes", request)
 
