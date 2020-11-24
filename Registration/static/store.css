@@ -1,3 +1,30 @@
+.change_page{
+  display: flex;
+  margin-top: 3%;
+  margin-left: 40%;
+  width: 20%;
+}
+.num_page
+{
+  margin-left: 1%;
+  width: 20%;
+  background-color:#dd5860;
+  text-align: center;
+
+  border-radius: 10px;
+}
+.num_page p
+{
+  font-size: 26px;
+  color:black;
+
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.5s;
+}
+.num_page p:hover
+{
+  color:white;
+}
 /* Задаем flex */
 .content {
   padding: 30px;

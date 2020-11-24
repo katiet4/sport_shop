@@ -6,8 +6,9 @@ import requests
 class views:
     def __init__(self):
         self.aunt = False
-        self.sportNews = requests.get("http://newsapi.org/v2/top-headlines?country=ru&category=sports&apiKey=4df71164a27d4abb98b0d0c9b3743e23")
+        self.sportNews = ""
         try:
+            self.sportNews = requests.get("http://newsapi.org/v2/top-headlines?country=ru&category=sports&apiKey=4df71164a27d4abb98b0d0c9b3743e23")
             self.sportNews = self.sportNews.json()
         except Exception as e:
             self.sportNews = {"articles":[
