@@ -8,11 +8,57 @@
       href="//fonts.googleapis.com/css?family=Montserrat:200,500,900&display=swap&subset=cyrillic"
       rel="stylesheet"
     />
-    <script src="{%static 'slide.js'%}"></script>
     {%block head%} {%endblock%}
+
+
+    <!-- -----------------------PRELOADER----------------------------- -->
+    <style type="text/css">
+      .loaded_hiding .preloader {
+        transition: 0.3s opacity;
+        opacity: 0;
+      }
+
+      .loaded .preloader {
+        display: none;
+      }
+      .preloader {
+        background-color: white;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+
+      } 
+      .preloader img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -23px;
+          margin-left: -20px;
+      }
+    </style>
+    <script>
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
+</script>
+<!-- ------------------------------------------------------------------- -->
   </head>
 
   <body>
+
+
+     <!-- -----------------------PRELOADER----------------------------- -->
+    <div class="preloader" id = "preloader">
+      {% load static %}
+      <img src="{%static 'preloader2.gif'%}" width="5%" >
+    </div>
+    <!-- ------------------------------------------------------------------- -->
+
     <header class="header">
       <div class="container">
         <nav class="bar">
@@ -53,7 +99,7 @@
     <footer class="footer">
       <div class="nav-footer">
         <div class="footer-block">
-          <img src="/static/images/shop.png" alt="" />
+          <img src="/static/images/logoSportShopSmall.svg"  alt="" />
           <div class="copyright">
             <span
               >© 2020

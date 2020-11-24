@@ -11,6 +11,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 body {
   background: #ffffff;
@@ -309,16 +310,6 @@ div[id="PageScrollTop"] {
   z-index: -1;
 }
 
-#snow {
-  width: 100%;
-  height: 100%;
-  background-image: url(/static/images/snow/s1.png),
-    url(/static/snow/images/s2.png), url(/static/snow/images/s3.png);
-  -webkit-animation: snow 20s linear infinite;
-  -moz-animation: snow 20s linear infinite;
-  -ms-animation: snow 20s linear infinite;
-  animation: snow 20s linear infinite;
-}
 
 @keyframes snow {
   0% {

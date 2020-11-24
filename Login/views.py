@@ -46,7 +46,7 @@ def recover_password(request):
                 addUrlToBD = URL_for_reset(codeURL = url, userId = user.id)
                 addUrlToBD.save()
 
-                HOSTNAME = '127.0.0.1:8000' # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! YOUR HOSTNAME
+                HOSTNAME = '31.163.185.197:8000' # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! YOUR HOSTNAME
 
                 m = ("To restore your password, follow this link: http://" +
                         HOSTNAME + "/login/recover_password/" + url)
