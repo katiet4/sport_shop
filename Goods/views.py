@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from Main.basket_new_goods import calculate_new
 from math import ceil
+import json
 class views:
 
     def __init__(self):
@@ -39,7 +40,6 @@ class views:
         show_pages_result = [i for i in range(num_page - 2, num_page + 3) if (i > 0 and i <= count_pages)]
         if (show_pages_result == []):
             show_pages_result = [1]
-
         return render(request, 'MainTemp/main.html', {"aunt":self.aunt,
                         "goods":goods,
                         "goodsInBasket" : newGoods,
